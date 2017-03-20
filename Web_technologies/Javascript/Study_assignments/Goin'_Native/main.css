@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'KingthingsExeterRegular';
+    src: url(../TypeDirectory/'Kingthings_Exeter-webfont.eot');
+   src: local("☺"),
+  src: url(../TypeDirectory/'Kingthings_Exeter-webfont.eot?#iefix') format('embedded-   opentype'),
+         url(../TypeDiretory/'Kingthings_Exeter-webfont.woff') format('woff'),
+         url(../TypeDirectory/'Kingthings_Exeter-webfont.ttf') format('truetype'),
+         url(../TypeDirectory/'Kingthings_Exeter-webfont.svg#KingthingsExeterRegular') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}
+h1.fontface {font: 60px/68px 'KingthingsExeterRegular', Arial, sans-serif;letter-spacing: 0;}
+h3.fontface {font: 45px/53px 'KingthingsExeterRegular', Arial, sans-serif;letter-spacing: 0;}
+ul.fontface {font: 15px/23px 'KingthingsExeterRegular', Arial, sans-serif;letter-spacing: 0;}
+
+p {text-align: left;}
+p.style1 {font: 18px/27px 'KingthingsExeterRegular', Arial, sans-serif;}
+#container {
+			width: 800px;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+}
+li {
+text-align: left;}

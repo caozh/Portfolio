@@ -1,0 +1,125 @@
+/*
+	Css File for Course Page Template
+*/
+
+/* Imports */
+@import url("reset.css");
+@import url("global-forms.css");
+
+/***** Global *****/
+/* Body */
+	body {
+		color: #000305;
+		font-size: 87.5%; /* Base font size: 14px */
+		font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+		line-height: 1.429;
+		margin: 0;
+		padding: 0;
+		text-align: left;
+		margin:auto;
+		width: 700px;
+		background: -moz-linear-gradient(top, #2F4F4F, #fff);
+		background: -webkit-gradient(linear, center top, center bottom, from(#2F4F4F), to(#fff));
+		height: 970px;
+		text-decoration: none;
+	}
+	#footer {
+	    text-align: center;
+		margin:auto;
+		width: 600px;
+		clear:both;
+		}
+
+    header {
+        text-align: left;
+        margin: 0px 20px;
+        padding: 20px;
+    }
+        #banner {
+       text-align:center;
+    }
+    #aside{
+		float: right;
+		width: 220px;
+		text-align:left;	
+		-moz-border-radius: 15px;
+		border-radius: 15px;
+	}
+
+    #featured {
+        float: left;
+        width: 380px;
+                }
+				
+	#content1 {
+		margin-top: 50px;
+		background: -moz-linear-gradient(top, #2F4F4F, #8FBC8F);
+		background: -webkit-gradient(linear, center top, center bottom, from(#2F4F4F), to(#8FBC8F));
+		height: 450px;
+		padding: 20px;
+		-moz-border-radius: 25px;
+		border-radius: 25px;
+
+	}
+        
+/* Headings */
+h1 {text-decoration: none;}
+h2 {font-size: 1.571em; color: #9ACD32; text-decoration: none;}
+h3 {font-size: 1.429em}
+h4 {font-size: 1.286em}	
+h5 {font-size: 1.143em}	
+h6 {font-size: 1em}	
+
+h2, h3, h4, h5, h6 {
+	font-weight: 400;
+	line-height: 1.1;
+	margin-bottom: .8em;
+}
+
+/* Anchors */
+ul a {	
+	outline: 0;
+	font-size: 1.2em;
+	color: #00FF00;
+	}
+
+a img {
+	border: 0px;
+	text-decoration: none;
+	margin:0;
+}
+
+ a:link, a:visited {
+	color: #32CD32;
+	padding: 0 1px;
+	text-decoration: none;
+}
+a:hover, a:active {
+	background-color: #C74350;
+	color: #fff;
+	text-decoration: none;
+	text-shadow: 1px 1px 1px #333;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+
+/* Paragraphs */
+p {margin-bottom: 1.143em;}
+* p:last-child {margin-bottom: 0;}
+
+strong, b {font-weight: bold;}
+em, i {font-style: italic;}
+
+::-moz-selection {background: #F6CF74; color: #fff;}
+::selection {background: #F6CF74; color: #fff;}
+
+/* Lists */
+ul {
+	list-style: outside disc;
+	margin: 1em 0 1.5em 1.5em;
+	text-align:left;
+}
+
+span {
+	font-size: 2em;
+}

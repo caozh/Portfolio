@@ -1,0 +1,106 @@
+html				{
+					margin:				0;
+					padding:			0;
+				}
+
+body			{
+					width:				960px;
+					margin:				0 auto 0 auto;
+					padding:			0;
+					/*background-color:	#3B3B3B;*/
+				}
+				
+header			{
+					
+					width:				960px;
+					height:				150px;
+					margin:				0;
+					padding:			0;
+					text-align:         center;
+					background-color:	#213D8A;
+					position:			relative;
+					top:				0px;
+					opacity:			1;
+					-webkit-box-shadow: 0px 5px 10px #000;
+					-moz-box-shadow: 	0px 5px 10px #000;
+				
+				}
+				
+header h1			{
+					width:				960px;
+					height:				30px;
+					padding:			35px 0 0 0; 
+					color:				#152859;
+					opacity:			1;
+					text-shadow:		0px 1px 1px #2748A3;
+					font-family:		Segoe UI, Helvetica, Verdana, Arial, Sans-serif;
+					font-size:			28pt;
+					text-align:			center;
+				}
+				
+header h2
+				{
+					width:				960px;
+					height:				30px;
+					padding:			5px 0 0 0; 
+					color:				#152859;
+					opacity:			1;
+					text-shadow:		0px 1px 1px #2748A3;
+					font-family:		Segoe UI, Helvetica, Verdana, Arial, Sans-serif;
+					font-size:			24pt;
+					text-align:			center;
+				}
+		
+article			{
+					/*width:				960px;*/
+					height:				100%;
+					background-color:	#111F45;
+					color:				#E8EEFF;
+					margin:				10px 10 10px 10;
+					padding:			10px 10px 10px 10px;
+
+				/*	opacity:			.5; */
+								}
+				
+#column{
+      column-count: 3;
+      column-gap: 2em;
+      column-rule: 5px double white;
+      
+      -webkit-column-count: 3;
+      -webkit-column-gap: 2em;
+      -webkit-column-rule: 5px double white;
+
+      -moz-column-count: 3;
+      -moz-column-gap: 2em;
+      -moz-column-rule: 5px double white;
+      
+    } // end column				
+				
+article p		{
+					padding:			5px 5px 5px 5px;
+					font-family:		Helvetica, Verdana, Arial, Sans-serif;  
+					text-align:         center;
+					
+				}
+				
+				
+nav				{
+					width:				960px;
+					height:				35px;
+					text-align:			center;
+					margin:				10px 0 10px 0;
+					background-color:	#135B8F;
+					padding:			10px 0 0 0;
+									}
+				
+nav a			{
+					color:						#FFFFFF;
+					text-decoration:			none;
+					font-family:				Helvetica, Verdana, Arial, Sans-serif;
+					padding:					0 25px 0 25px;
+				}
+				
+nav a:hover		{
+					font-weight:				bold;
+				}

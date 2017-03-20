@@ -1,0 +1,23 @@
+header {
+	text-align: center;
+	margin-top: 10px;
+}
+
+#image {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+footer {
+	font-size: 12px;
+	font-family: Arial;
+	text-align: center;
+	clear: both;
+	height: 30px;
+	width: 770px;
+	margin: auto;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+	background: -moz-linear-gradient(top, #fff, #F5F5F5);
+	background: -webkit-gradient(linear, center top, center bottom, from(#fff), to(#F5F5F5));
+}

@@ -1,0 +1,196 @@
+
+body {
+	font-family: "Trebuchet MS", Tahoma, Arial, sans-serif;
+	font-size:100%;
+	background-image: url(Background1.jpg);
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-attachment:fixed;
+	-moz-border-radius: 15px; 
+	-khtml-border-radius: 15px; 
+	-webkit-border-radius: 15px; 
+	border-radius: 15px;
+}
+
+p {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 0.875em;
+	color: #fff;
+	line-height:2em;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+h1 {
+	font-size: 1.5em;
+	line-height:1.5em;
+	font-weight: normal;
+}
+
+
+
+
+h2,h3,h4 {
+	font-size:1.125em;
+	letter-spacing:0.2em;
+	color: #fff;
+}
+
+h3 {
+	font-size:0.875em;
+	letter-spacing:0.1em;
+}
+
+ul {
+	font-size: 0.875em;
+	background-color: #E5DAB3;
+	list-style-position: inside;
+}
+
+#container {
+    width: 980px;
+    margin: 0 auto;
+	background-color: #C0C0C0;
+	margin-top: 3em;
+	margin-bottom: 3em;
+}
+
+#masthead {
+	background-color: gray; 
+}
+
+#head_image {
+    float: right;
+	padding: 1em;
+    }
+	
+#masthead h1 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+  	font-size: 2em;
+	font-weight: bold;
+	color:#DCDCDC;
+  	font-weight: normal;
+ 	float:right;
+	margin-right: 1em;
+	margin-top: 0.8em;
+}
+
+nav {
+	background-color: #60668B;
+	height: 35px;
+	background-image: url(images/bg_nav.gif);
+	background-repeat: repeat-x;
+	clear: both;
+}
+
+nav li {
+	float: left;
+	width: 120px;
+    height: 35px;
+	background-color: #7D83A4;
+    text-align: center;
+	border-left: 1px black solid;
+	border-right: 1px black solid;
+	line-height: 35px;
+}
+
+nav ul li a {
+	color:#ffffff;
+	text-decoration: none;
+	display:block;
+}
+
+nav ul li a:hover {
+	background-color:#29336b;
+	color:#F8F068;
+}
+
+body#home .nav-home, body#aboutus .nav-about, body#contact .nav-contact {
+	background-color:#29336b;
+	color:#F8F068;
+}
+
+#introduction-content {
+	width: 600px;
+	float: right;
+	background-color: #696969;
+	margin: 2em;
+	margin-top: 1em;
+	
+}
+
+#introduction-content h2 {
+	font-size:2em;
+	margin: 20px;
+}
+
+#introduction-content h3 {
+	font-size: 2em;
+	font-weight: bold;
+	margin-top: 1em;
+	margin-bottom: 0.3em;
+}
+
+#introduction-content h4 {
+	font-size: 1.1em;
+	margin-top: 1em;
+	margin-bottom: 0.3em;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+#secondary-content {
+	float: left;
+	width: 300px;
+	text-align:center;
+	background-color: #778899;
+	margin-top: 1em;
+	margin-left: 1em;
+	margin-bottom: 2em;
+}
+
+table {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	border-collapse: collapse;
+	text-align: center;
+	border:inset;
+	border-top-width: 3px; 
+	border-right-width: 3px; 
+	border-bottom-width: 3px;
+	border-left-width: 3px;
+	color: #fff;
+}
+
+td, th {
+	border: thin solid black;
+	padding: 5px;
+	border:inset;
+	border-top-width: 3px; 
+	border-right-width: 3px; 
+	border-bottom-width: 3px;
+	border-left-width: 3px;"
+}
+
+caption {
+	font-style: italic;
+	padding-top: 18px;
+	padding-bottom: 18px;
+	font-size: 2em;
+}
+
+
+
+#footer {
+	clear:both;
+	padding:5px;
+	text-align:center;
+	font-size:.8em;
+	background-color: #000;
+	}
+#footer p { 
+	text-align:center;
+	margin-left:auto; 
+	margin-right:auto;
+	}

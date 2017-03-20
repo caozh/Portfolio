@@ -1,0 +1,34 @@
+
+#menuBar ul{
+	margin:0;
+	padding:0;
+}
+
+#menuBar li{
+	width:200px;
+	height:50px;
+	float:left;
+	color:#191919;
+	text-align:center;
+	overflow:hidden;
+}
+
+#menuBar a{
+	color:#FFF;
+	text-decoration:none;
+}
+
+#menuBar p{
+	padding:0px 5px;
+}
+
+#menuBar .subtext{
+		padding-top:15px;
+	}
+
+/*Menu Color Classes*/
+#menuBar .green{background:#6AA63B url('images/green-item-bg.jpg') top left no-repeat;}
+#menuBar .yellow{background:#FBC700 url('images/yellow-item-bg.jpg') top left no-repeat;}
+#menuBar .red{background:#D52100 url('images/red-item-bg.jpg') top left no-repeat;}
+#menuBar .purple{background:#5122B4 url('images/purple-item-bg.jpg') top left no-repeat;}
+#menuBar .blue{background:#0292C0 url('images/blue-item-bg.jpg') top left no-repeat;}

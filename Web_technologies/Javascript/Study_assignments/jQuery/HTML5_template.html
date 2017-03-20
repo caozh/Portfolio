@@ -1,0 +1,224 @@
+<!DOCTYPE html >
+<head>
+<meta charset="utf-8" />
+<title>梦想想要的HTML5+css3的效果</title>
+<style type="text/css">
+.transition_delay{
+	margin:30px;
+	 -webkit-transform:rotate(10deg);
+	  -webkit-transition-property:all;
+	   -webkit-transition-duration:0.5s;
+	    -webkit-transition-timing-function:ease-in;
+		 -webkit-transition-delay:1s;}
+.transition_delay:hover{
+	-webkit-transform:rotate(40deg);
+	}
+
+.div {
+    margin:30px;
+	 -webkit-transform:rotate(10deg);
+	  -webkit-transition-property:all;
+	   -webkit-transition-duration:0.5s;
+	    -webkit-transition-timing-function:ease-in;
+		 -webkit-transition-delay:1s;
+  }
+.div:hover{
+       -webkit-transform:rotate(40deg);
+      }
+/*------------------------------------华丽的分割线--------------*/
+body{
+	background-color:#cccccc;
+	font-family:"汉仪细行楷简";
+	margin:0px auto;
+	max-width:900px;
+	border:solid;
+	border-color:#ffffff;}
+header{
+	background-color:#f47d31;
+	display:block;
+	color:#ffffff;
+	text-align:center;}
+header h2{
+	margin:0px;}
+h1{
+	font-size:72px;
+	margin:0px;}
+h2{
+	font-size:24px;
+	margin:0px;
+	text-align:center;
+	color:#f47d31;}
+h3{
+	font-size:18px;
+	margin:0px;
+	text-align:center;
+	color:#f47d31;}
+h4{
+	color:#f47d31;
+	background-color:#fff;
+	-webkit-box-shadow:2px 2px 20px #888;
+	-webkit-transform:rotate(-45deg);
+	-moz-box-shadow:2px 2px 20px #888;
+	-moz-transform:rotate(-45deg);
+	position:absolute;
+	padding:0px 150px;
+	top:50x;
+	left:-120px;
+	text-align:center;}
+nav{
+	display:block;
+	width:25%;
+	float:left;}
+nav a:link, nav a:visited{
+	display:block;
+	border-bottom:3px solid #fff;
+	padding:10px;
+	text-decoration:none;
+	font-weight:bold;
+	margin:5x;}
+nav a:hover{
+	color:white;
+	background-color:#f47d31;}
+nav h3{
+	margin:15px;
+	color:white;}
+#container{
+	background-color:#888;}
+section{
+	display:block;
+	width:50%;
+	float:left;}
+article{
+	background-color:#eee;
+	display:block;
+	margin:10px;
+	padding:10px;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	-webkit-box-shadow:2px 2px 20px #888;
+	-webkit-transform:rotate(-10deg);
+	-moz-box-shadow:2px 2px 20px #888;
+	-moz-transform:rotate(-10deg);
+	}
+article header{
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	padding:5px;}
+artiocle footer{
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	padding:5px;}
+article h1{
+	font-size:18px;}
+aside{
+	display:block;
+	width:25%;
+	float:left;}
+aside h3{
+	margin:15px;
+	color:white;}
+aside p{
+	margin:15px;
+	color:white;
+	font-weight:bold;
+	font-style:italic;}
+footer{
+	clear:both;
+	display:block;
+	background-color:#f47d31;
+	color:#ffffff;
+	text-align:center;
+	padding:15px;}
+footer h2{
+	font-size:14px;
+	color:white;}
+a{
+	color:#47d31;}
+a:hover{
+	text-decoration:underline;}
+</style>
+</head>
+<script >
+function drawDiagonal(){
+	var canvas=document.getElementById('diagonal');
+	var context=canvas.getContext('2d');
+	context.beginPath();
+	context.moveTo(70,140);
+	context.lineTo(140,70);
+	context.stroke();
+	}
+window.addEventListener("load",drawDiagonal,true);
+function drawDiagonal2(){
+	var canvas=document.getElementById('diagonal2');
+	var context=canvas.getContext('2d');
+	context.save();
+	context.translate(70,140);
+	context.beginPath();
+	context.moveTo(0,0);
+	context.lineTo(70,-70);
+	context.stroke();
+	context.restore();
+	}
+window.addEventListener("load",drawDiagonal2,true);
+</script>
+<body>
+    <header>
+        <h1>h1</h1>
+        <h2>h2</h2>
+        <h4>h4</h4>
+    </header>
+    <div id="container">
+    	<nav>
+        	<h3>nav</h3>
+            <a href="#">link1</a>
+            <a href="#">link2</a>
+            <a href="#">link3</a>
+        </nav>
+        <section>
+        	<article>
+            	<header>
+                	<h1>这应该是当前页面的头部文件吧</h1>
+                </header>
+                <p>fasfsafsafasdfasdfdsfsdfdsfsadf</p>
+                <p>asdfdssssssssssssssssssssssssssssssssssssssss</p>
+                <footer>
+                	<h2>这是哪个的脚部文件啊</h2>
+                </footer>
+            </article>
+            <article>
+            	<header>
+                	<h1>dafaFasdf撒旦法</h1>
+                </header>
+                <p>这又是一个很长的p文件</p>
+                <footer>
+                	<h2>这是第二个脚部文件</h2>
+                </footer>
+            </article>
+        </section>
+        <aside>
+        	<h3>这是h3</h3>
+            <p>zhe是一个p标记</p>
+        </aside>
+        <footer >
+        	<h2>这是h2</h2>
+        </footer>
+    </div>
+    <br /><br /><br />
+    这是用canvas实现的
+    <br/>
+    <canvas id="diagonal" style="border:1px solid; width:200px; height:200px; " >
+    </canvas>
+    <br />
+    这是用变换的方式在canvas上绘制对角线
+    <br/>
+    <canvas id="diagonal2" style="border:1px solid; width:300px; height:300px;">
+    
+    </canvas>
+    <br /><br /><br /><br /><br /><br />
+    <img class="transition_delay" src="mm1.jpg" /><br />
+    <div class="div">鼠标放在图片上1秒钟，然后……</div>
+</body>
+</html>

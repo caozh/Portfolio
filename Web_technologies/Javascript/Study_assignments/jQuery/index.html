@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>jQuery Animating an Element</title>
+	<link rel="stylesheet" media="screen" href="reset.css" type="text/css"  />
+	<link rel="stylesheet" media="screen" href="main.css" type="text/css"  />
+    <script type="text/javascript" src="jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="animating.js"></script>
+	<!--UI Demo-->
+	<link rel="stylesheet" href="css/jquery.ui.all.css">
+	<script src="js/jquery.ui.core.js"></script>
+	<script src="js/jquery.ui.widget.js"></script>
+	<script src="js/jquery.ui.accordion.js"></script>
+	<link rel="stylesheet" href="css/demos.css">
+	<!--menu plugin-->
+
+</head>
+
+
+<body>
+	<div id="page">
+	<header><h1>Athena Chu</h1>
+	<div id="headImage">
+	<img src="image.jpg" width="350" alt="Athena Chu">
+	</div>
+	</header>
+	
+	<nav>
+		<ul>
+				<li><a class = "" href = "overall.html">Info</a></li>
+				<li><a class = "" href = "">Gallery</a></li>
+				<li><a class = "" href = "">Video</a></li>
+				<li><a class = "" href = "h">Your Voice</a></li>
+		</ul>
+	</nav>
+	
+	<div id="content">
+	
+	<div id="topContent">
+	
+	<div id="accordion">
+	<h3><a href="#">Section 1</a></h3>
+	<div id="smallInfo">
+		<p>Chu attended The Hong Kong Academy for Performing Arts from 1990 to 1992, during which time she 
+		hosted children's shows on the television station TVB. After graduating in 1992, she started working 
+		on films. Her roles with Chow kick-started her film career, and she is considered one of the Sing girls. 
+		Later, she moved on to work on television dramas produced by TVB.
+		After leaving TVB, Chu worked as a model and continued acting in films during the 1990s. In 2000, 
+		she started working on Mainland Chinese and Taiwanese television series.
+		</p>
+		</div>
+	<h3><a href="#">90's opus</a></h3>
+	<div>
+		<p>1992	To Miss with Love</p>
+		<p>1992	Super Lady Cop</p>
+		<p>1992 Fight Back to School II</p>
+		<p>1993	Once a Cop</p>
+	</div>
+	<h3><a href="#">20's opus</a></h3>
+	<div>
+		<p>2000	Love Correction</p>
+		<p>2000	Conman in Tokyo</p>
+		<p>2001	Stowaway</p>
+		<p>2001	Never Say Goodbye</p>
+	</div>
+	<h3><a href="#">21's opus</a></h3>
+		<div>
+		<p>2011	Scary Market</p>
+		<p>2011	Twin of Brothers</p>
+		</div>
+	</div>
+	
+	<div id="basicInfo">
+	<h3>Basic Information</h3>
+	</div>
+		<p>Chinese Name: 朱茵</p>
+		<p>Born: 1971-10-25</p>
+		<p>Bron in: Hong Kong</p>
+		<p>Figure: C35/ W24 /H36</p>
+		<p>Blood type: AB</p>
+		<p>Vocation: Actress, Singer</p>
+		<p>Height: 160cm</p>
+		<p>weight: 44kg</p>
+		
+	</div>
+	
+	<div id="midContent">
+	<!--show-->
+	<div id="image1">
+		<div id="image1border">
+		<div id="image11">
+			<img src="1.jpg" alt="Athena Chu">
+		</div></div>
+		<br />
+		<div id="control1">
+			<button id="show">Show</button>
+			<button id="hide">Hide</button>
+			<button id="toggle">Toggle</button>
+		</div>
+	</div>
+	<!--movement-->
+	<div id="image2">
+		<div id="image2border">
+		<div id="image22">
+			<img src="2.jpg" alt="Athena Chu">
+		</div></div>
+		<br />
+		<div id="control2">
+			<button id="toLeft">Move to left</button>
+			<button id="toRight">Move to right</button> <br />
+			<button id="toTop">Move to top</button>
+			<button id="toBottom">Move to bottom</button>
+		</div>
+	</div>
+	<!--slide-->
+	<div id="image3">
+		<div id="image3border">
+		<div id="image33">
+			<img src="3.jpg" alt="Athena Chu">
+		</div></div>
+		<br />
+		<div id="control3">
+			<button id="slideup">Slide Up</button>
+			<button id="slidedown">Slide Down</button>
+			<button id="toggle-slide">Toggle Slide</button>
+		</div>
+	</div>
+	<!--fade-->
+	<div id="image4">
+		<div id="image4border">
+		<div id="image44">
+			<img src="4.jpg" alt="Athena Chu">
+		</div>
+		</div>
+		<br />
+		<div id="control4">
+			<button id="fadein">Fade In</button>
+			<button id="fadeout">Fade Out</button> <br />
+			<button id="fadeto3">Fade To .3</button>
+			<button id="fadeup">Fade To 1.0</button>
+		</div>
+	</div>
+	
+	
+	</div>
+	
+	<div id="btmContent">
+	<video id="video" width="301" height="165" preload controls>
+	<source src="video/1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+	</video>
+	
+	<div id="photoShow">
+	<div class="current">
+		<img src="1.jpg" alt="Athena Chu">
+	</div>
+	
+	<div>
+		<img src="2.jpg" alt="Athena Chu">
+	</div>
+	
+	<div>
+		<img src="3.jpg" alt="Athena Chu">
+	</div>
+	
+	<div>
+		<img src="4.jpg" alt="Athena Chu">
+	</div>
+
+	</div><!--end photoShow-->
+	
+	</div><!--end btmContent-->
+
+	<footer>
+		<p>2012, Zhihao's Final project<br />
+All trademarks and registered trademarks appearing on this site are the property of their respective owners. </p>
+	</footer>
+	</div><!--end content-->
+	</div><!--end page-->
+</body>
+</html>
