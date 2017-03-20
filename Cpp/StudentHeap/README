@@ -1,0 +1,6 @@
+A Heap Of Students
+Author: Zhihao Cao
+Purpose: To make a list of students, place them on a heap and sort them alphabetically.
+
+Description:
+Loads student information from db (Delimiter '|') and stores into student object, offers print, and print alphabetically methods.
