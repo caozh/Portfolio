@@ -1,0 +1,12 @@
+Objectives:
+1. Implement an online "Five in a Row" game.
+2. Improve your hands-on ability on system development using application layer protocols.
+
+Running instructions:
+1. Make sure your both computers are in the same Local Area Network. 
+2. For your server computer, install node.js and use npm to install socket.io
+3. Please edit the index.html file from client folder: change line 7 and line 20's IP address to your server node computer's IP address. (you can input "ipconfig" into CMD command consolo to find your IP address)
+4. Copy client folder to both computers. Copy the server folder to the computer you want it to be the server.
+5. For your server computer, open CMD console, type "node ", and drag the "index.js" file from server folder to the console window. Then press ENTER. You should see the response "server is started, port: 8080" on the console window.
+6. Open the "index.html" file in both computers.
+7. Input your nickname and start enjoying the game. 
