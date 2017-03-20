@@ -1,0 +1,9 @@
+Subject:     Defense_Homeland.py 
+Author:      Zhihao Cao
+Last Modify: 2014/12/11
+
+Description: 
+A combat game written in python with pygame library. 
+(pygame lib is embeded in Portable Python 2.7.6.1)
+Use arrow key to move character
+Press SPACE to attack
