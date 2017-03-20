@@ -1,0 +1,180 @@
+"""
+data segmentation
+"""
+#Prepare payload || store values in a list
+def payloadList(theData):
+    payloadList = []
+    a = int(mycontext['userPacketSize'])
+    residue = len(theData) % a
+    k = len(theData) / a
+    l = k * a
+
+    if residue == 0:
+        for i in range(0, k):
+            thePayload = theData[(i * a):(i * a) + a]
+            payloadList.append(thePayload)
+    else:
+        for i in range(0, k):
+            thePayload = theData[(i * a):(i * a) + a]
+            payloadList.append(thePayload)
+        payloadList.append(theData[l:])
+    return payloadList
+"""
+make packet
+"""
+#Prepare payload || store values in a list
+def makePacket(theNextSequenceNumber, thePayload):
+    thePacketStructure = str(theNextSequenceNumber) + mycontext["DELIM"] + thePayload 
+    return thePacketStructure
+"""
+stop and wait protocol
+"""
+#reliable send a packet
+def reliableSendPacket(ServerIP, ServerPort, packetStructure, ClientIP, ClientPort):
+    #take care the first time
+    retryAmountLeft = -1
+    #while retryAmountLeft < mycontext['userRetryAmountLeft']:
+        #retryAmountLeft = retryAmountLeft + 1
+    print "sender try to send", packetStructure
+    sendmess(ServerIP, ServerPort, packetStructure, ClientIP, ClientPort)
+
+"""
+send packet
+"""
+#Sliding Window send a packet
+def slidingWindowSendPacket(ServerIP, ServerPort, payload, ClientIP, ClientPort):
+    if shouldSend() == True:
+        if mycontext['windowBase'] == mycontext['nextSequenceNumber']:
+            mycontext["senderTimeOut"] = settimer(5, senderTimeOutEvent, ())
+        #make the packet structure
+        packetStructure = makePacket(mycontext['nextSequenceNumber'], payload)
+        print "Sender make packet as: ", packetStructure
+        #since we have sent a packet, we need to increment the next sequence number
+        mycontext['nextSequenceNumber'] = mycontext['nextSequenceNumber'] + 1
+        reliableSendPacket(ServerIP, ServerPort, packetStructure, ClientIP, ClientPort)
+        mycontext['currentWindow'].append(packetStructure)
+        return True
+    else:
+        return False
+
+# Handle an incoming message || Bad Function Name
+def communicationEstablished(srcip, srcport, mess, ch):
+    print "sender received ACK: '"+mess+"' from "+srcip+":"+str(srcport)
+    print "sender expected ACK:", str(mycontext['windowBase'])
+    ###Joseph
+    mycontext['ack_received'] = True
+     #move window
+    if mess == str(mycontext['windowBase']):
+        mycontext['currentWindow'].remove(mycontext['currentWindow'][0])
+        mycontext['windowBase'] = mycontext['windowBase'] + 1
+        #what if received an expected ACK
+        if mycontext['windowBase'] == mycontext['nextSequenceNumber']:
+            canceltimer(mycontext["senderTimeOut"])
+        else:
+        # cancel before reset
+            canceltimer(mycontext["senderTimeOut"])
+            mycontext["senderTimeOut"] = settimer(5, senderTimeOutEvent, ())
+        mycontext['windowStartIndex'] = mycontext['windowStartIndex'] + 1
+        mycontext['windowEndInex'] = mycontext['windowEndInex'] + 1
+        
+        print "move window", str(mycontext['windowBase'])
+    #check ack
+    #if mess == str(mycontext['nextSequenceNumber'] - 1):
+    #    print "ACK: GOOD!"
+    #else:
+    #    print "ACK: Bad!"
+
+    
+# sender ACK Handler
+def handlerACK(srcip, srcport, mess, ch):
+    #sender ACK is what
+    print "Sender ACK: ", mess
+    #expectation ACK is what
+    expectationACK = "ACK" + str(mycontext['lastSequenceNumber'])
+    if expectationACK == mess:
+        print "Sender ACK: GOOD!"
+
+#SW: should we send this packet
+def shouldSend():
+    if ((mycontext['nextSequenceNumber'] >= mycontext['windowStartIndex']) and (mycontext['nextSequenceNumber'] <= mycontext['windowEndInex'])):
+        return True
+    else:
+        return False
+#SW: define event when sender time out
+def senderTimeOutEvent ():
+    print "time out event"
+    mycontext["senderTimeOut"] = settimer(5, senderTimeOutEvent, ())
+    for item in mycontext['currentWindow']:
+        reliableSendPacket(ServerIP, ServerPort, item, ClientIP, ClientPort)
+    
+       
+
+if callfunc == 'initialize':
+    if len(callargs) != 2:
+        raise Exception("Must specify Receiver IP && port in order to send a packet.")
+
+    ###Joseph 
+    mycontext["DELIM"] = ","
+    myip = getmyip()
+    ServerIP = callargs[0]
+    ServerPort = callargs[1]
+    ServerPort = int(ServerPort)
+    ClientIP = myip
+    ClientPort = callargs[1]
+    ClientPort = int(ClientPort)
+    mycontext['lastSequenceNumber'] = 0
+    mycontext['userPacketSize'] = 3
+    mycontext['userRetryAmountLeft'] = 5
+    #window size
+    mycontext['userWindowSize'] = 5
+    #we need to have a mechanism to check whether we need to move the window
+    mycontext['windowBase'] = 0
+    #determine whether we can keep sending a new packet
+    mycontext['nextSequenceNumber'] = 0 
+    #determine window startIndex and endIndex
+    mycontext['windowStartIndex'] = 0
+    mycontext['windowEndInex'] = mycontext['userWindowSize'] - 1
+    #determine whether we need keep looping the packets down to our protocol
+    mycontext['keepLooping'] = True
+    mycontext['currentWindow'] = []
+    """
+    ACK handler starting point
+    """
+    recvmess(myip, int(callargs[1]), communicationEstablished)
+    
+    print "Sender IP:", myip
+    print "Sender to:", callargs[0], "myPort", callargs[1]
+  
+    """
+    Read file || since command uploaded the file to sender
+    """
+    applicationPackets = []
+    myFileObjectRead = file("UDPFile.file", "r")
+    theData = myFileObjectRead.read()
+    print "Sender read data from file as: ", theData
+    
+    """
+    segment the file by calling segmentation function, hold the value in a python.list
+    applicationPackets is a list with equivalent size on each index
+    """
+    applicationPackets = payloadList(theData)
+    print "Sender segment data as: ", applicationPackets
+    
+    """
+    test purpose
+    """
+    sendResult = False
+    i = 0
+    while i < 10:
+    #    print "Sender got packet from application: ", i
+        sendResult = slidingWindowSendPacket(ServerIP, ServerPort, applicationPackets[i], ClientIP, ClientPort)
+    #    if mycontext['keepLooping']:
+    #        i = i + 1
+    #    else:
+    #        i = i
+        sleep(0.05)
+        if sendResult == True :
+            i = i + 1
+        
+    myFileObjectRead.close()
+    settimer(20, exitall,())

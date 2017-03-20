@@ -1,0 +1,60 @@
+###Joseph
+#set the message-receive time out
+def transmition_time_out():
+    mycontext["outfile"].close()
+    print "Server time out. Closing file"
+    exitall()
+
+# Handle an incoming message
+###Joseph
+def communicationEstablished(remoteIP, remoteport, mess, ch):
+    #extract packet structure
+    dd = mess.split(",", 2)
+    mess_seq = int(dd[0])
+    mess_body = dd[1]
+    
+    print "Received message: '" + mess + "' from " + remoteIP + ":" + str(remoteport)
+    #print the received sequence number and message
+    print "mess_seq:" + str(mess_seq) + ", mess_body:" + mess_body
+
+    if str(mycontext['expectSN']) >= str(mess_seq):
+        print "     expected SN", str(mycontext['expectSN'])
+        #Write the received file to "file1"
+        if "server_time_out" in mycontext:
+            canceltimer(mycontext["server_time_out"])
+        mycontext["outfile"].write(mess)
+        if str(mycontext['expectSN']) > str(mess_seq):
+            reliableSendMessage(remoteIP, remoteport, str(mess_seq), getmyip(), int(callargs[0]))
+            mycontext['expectSN'] = mess_seq + 1
+        else:
+            reliableSendMessage(remoteIP, remoteport, str(mycontext['expectSN']), getmyip(), int(callargs[0]))
+            mycontext['expectSN'] = mycontext['expectSN'] + 1
+    else:
+        print "     else: expected SN", str(mycontext['expectSN'])
+        reliableSendMessage(remoteIP, remoteport, str(mycontext['expectSN'] - 1), getmyip(), int(callargs[0]))
+
+# A new routine: reliableReceiveMessage(sourceIP, SourcePort, function)
+# extend the routine: recvmess(localip, localport, function)
+# reliableReceiveMessage should return the handle to the REPY recvmess event
+    ###Joseph
+def reliableReceiveMessage(sourceIP, sourcePort):
+    recvmess(sourceIP, sourcePort, communicationEstablished)
+
+#Another new routine: reliableSendMessage(destinationIP, destinationPort, message, sourceIP = None, sourcePort = None)
+def reliableSendMessage(destinationIP, destinationPort, mess, sourceIP, sourcePort):
+    sendmess(destinationIP, destinationPort, mess, sourceIP, sourcePort)
+    
+if callfunc == 'initialize':
+    # callargs are the command line arguments for your program
+    # Callargs is a list of strings that contain the arguments your program was called with. If there are no arguments, callargs contains an empty list.
+    if len(callargs) != 1:
+        raise Exception("Must specify 'port' to wait for packets on")
+    # gets an external IP address of the computer
+    myip = getmyip()
+    port = int(callargs[0])
+    mycontext["outfile"] = open("file1", "w")
+    mycontext['expectSN'] = 0
+    #Call a function to send a feedback to Client
+    reliableReceiveMessage(myip, port)    
+    print 'ping server is waiting for incoming messages on', myip, 'port', port
+    settimer(20, exitall,())
