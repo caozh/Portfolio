@@ -2,3 +2,6 @@ Edge_detection
 Author:          Zhihao Cao
 Last modified:   2014/4/14
 Description:     Applying differentiation filters on XY-axis to retrieve image primitive edges.
+
+Report:
+http://cs.iupui.edu/~caozh/CSCI_43500/edge_detection/edge_dection.html
