@@ -1,0 +1,393 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Project 2.html</title>
+	<link   rel="stylesheet" type="text/css"
+			href="textMask.css">
+    <script type = "text/javascript"
+            src = "simpleGame.js" ></script>
+	<script type = "text/javascript"
+            src = "project2Lib.js"></script>
+    <script type = "text/javascript">
+		var game;
+        var background;
+        var character;
+		var gunSound;
+		var bulletsArray;
+		var enemiesArray;
+		var enemies;
+		var HP = 3;
+		var NUM_BULLETS = 25;
+		var NUM_ENEMIES = 5;
+		var currentBullet = 0;
+		var pursueChance;
+		var LEVEL = 1;
+		var kill = 0;
+		var timer;
+		var timer2;
+		var time;
+		var imageNum;
+		var result;
+		var gunMP3;
+		var bgm;
+		var hurt;
+		var die;
+		
+		
+		
+		function getHighScore(){
+			//get the high score on this machine using localStorage
+			highScore = parseInt(localStorage.getItem("myHighScore"));
+			highTime = parseInt(localStorage.getItem("myHighTime"));
+			console.log("HighScore: ", highScore, " Time: ", highTime, "seconds");
+			if (highScore == "null"|| highScore == null|| isNaN(highScore)){
+				highScore = 0;
+			} // end if
+			if (highTime == "null"|| highTime == null|| isNaN(highTime)){
+				highTime = 0;
+			} // end if
+		} // end getHighScore
+		
+		
+		function saveHighScore(){
+			if (kill > highScore){
+				alert("New highest score!");
+				localStorage.setItem("myHighScore", kill);
+			} // end if
+			if (time > highTime){
+				alert("New Longest last!");
+				localStorage.setItem("myHighTime", time);
+			} // end if
+		} // end saveHighScore
+		
+		
+		function updateScore(){
+			time = timer.getElapsedTime();
+			result = "Highest Score: " + highScore + ", Longest last: " + highTime + " seconds";
+			result += ",  Lives: " + HP + ", Kills: "+ kill +",   Time: " + time + " seconds";
+			scoreboard.innerHTML = result;
+		} // end updateScore
+			
+		
+		function makeEnemies(){
+			enemiesArray = null;
+			enemiesArray = new Array(NUM_ENEMIES);
+			for (i = 0; i < NUM_ENEMIES; i++){
+				enemiesArray[i] = new Enemy();
+            } // end for
+        } // end makeEnemies
+		
+		
+		function Enemy(){
+			tEnemy = null;
+			//create enemy using different image. 
+			imageNum = Math.random();
+			//equal probability to create in different image
+			if(imageNum > 0.5) {
+				tEnemy = new Sprite(game, "zombie.png", 35, 25);
+			} else {
+				tEnemy = new Sprite(game, "zombie2.png", 35, 32.6);
+			}
+			tEnemy.setSpeed(3);
+			//random the new spawn enemy facing angle
+			tEnemy.setAngle(imageNum*180);
+			//make enemy follow character
+			tEnemy.follow = function(NUM){
+				//output.innerHTML = enemiesArray[0].x + "<br>"+ enemiesArray[0].y + "<br>" + enemiesArray[1].x + "<br>"+ enemiesArray[1].y;
+				//the enemy IQ: the enemy reaction chance. 
+				pursueChance = Math.random();
+				if (pursueChance > 0.98){
+					var zombie_dx = character.x -  enemiesArray[NUM].x;
+					var zombie_dy = character.y -  enemiesArray[NUM].y;
+					//find the radians angle between them
+					var angle = Math.atan2(zombie_dy, zombie_dx);
+					//offset to 0 degress at 12 o'clock direction
+					var angleDegree = angle * 360 / (2 * Math.PI) + 90;
+					//offset to be always positive
+					if (angleDegree < 0) {
+						angleDegree += 360; 
+					}
+					
+					//var angel3 = tEnemy.angleTo(character);
+					//angel3 += 90;
+					
+					//find the enemy direction and modulo to 360 degrees
+					var imgAngle2 = enemiesArray[NUM].getImgAngle();
+					imgAngle2 %= 360;
+					
+					//subtract to get the turn angle
+					var turnAngleDegree = angleDegree - imgAngle2;
+					this.changeAngleBy(turnAngleDegree);
+					
+					//output.innerHTML = "enemy1 angle: " + angleDegree + 
+					//"<br>" + "turnAngleDegree: " + turnAngleDegree +
+					//"<br>" + "getImgAngle: " + imgAngle2;
+				}
+				
+			} // end follow
+			tEnemy.reset = function(){
+				//set new random position
+				var spawnNum = Math.random();
+				//output.innerHTML = "spawnNum: " + spawnNum;
+				//make enemy coming from borders in equal probabilities.
+				if (spawnNum < 0.5) {
+					if (spawnNum < 0.25) {
+						newX = Math.random() * this.cWidth;
+						newY = 0;
+					} else {
+						newX = Math.random() * this.cWidth;
+						newY = background.height;
+					}
+				} else {
+					if (spawnNum < 0.75) {
+						newX = 0;
+						newY = Math.random() * this.cHeight;
+					} else {
+						newX = background.width;
+						newY = Math.random() * this.cHeight;
+					}
+				}
+				this.setPosition(newX, newY);
+			} // end reset
+			tEnemy.reset();
+			return tEnemy;
+		} // end Enemy()	
+	
+	
+		function updateEnemies() {
+			for (var i = 0; i < NUM_ENEMIES; i++){
+				enemiesArray[i].follow(i);
+				checkCollisions(i);
+				enemiesArray[i].update();
+			} // end for
+		} // end updateBullets
+		
+		
+		function checkCollisions(enemyNum){
+			for (i = 0; i < NUM_BULLETS; i++){
+				//When character get hit 
+				if (character.collidesWith(enemiesArray[enemyNum])){
+					HP--;
+					hurt.stop();
+					hurt.play();
+					//output.innerHTML += HP;
+					enemiesArray[enemyNum].reset();
+					//When character die
+					if (HP < 1) {
+						saveHighScore();
+						alert("You lose");
+						game.stop();
+						//re-start game
+						document.location.href = "";
+					}
+				}//end if
+				//when bullet hit zombie
+				if (bulletsArray[i].collidesWith(enemiesArray[enemyNum])){
+						//die.stop();
+						//die.play();
+						kill++;
+						bulletsArray[i].hide();
+						enemiesArray[enemyNum].reset();
+				}  //end if
+				
+			} //end for
+        } // end checkCollisions
+							
+		
+		function checkLevel() {
+			//output.innerHTML =  " kill: " + kill;
+			if (kill == 10){
+				//pop up level up notification
+				alert("Level 2!");
+				//reserved variable for future use
+                LEVEL = 2;
+				//increase enemy numbers
+				NUM_ENEMIES = 10;
+				//recreate enemies
+				makeEnemies();
+				//avoid condition repeating
+				kill++;
+				//avoid moving bug
+				game.initKeys();
+            } if (kill == 30){
+				alert("Level 3!");
+				LEVEL = 3;
+				NUM_ENEMIES = 20;
+				makeEnemies();
+				kill++;
+				game.initKeys();
+			} if (kill == 60){
+				alert("Level 4!");
+				LEVEL = 4;
+				NUM_ENEMIES = 30;
+				makeEnemies();
+				kill++;
+				game.initKeys();
+			} if (kill == 100){
+				alert("Level 5!");
+				LEVEL = 5;
+				NUM_ENEMIES = 40;
+				makeEnemies();
+				kill++;
+				game.initKeys();
+			} if (kill == 200){
+				alert("Level 6!");
+				LEVEL = 6;
+				NUM_ENEMIES = 50;
+				makeEnemies();
+				kill++;
+				game.initKeys();
+			} if (kill == 300){
+				alert("Welcome to level 7: inferno level !");
+				LEVEL = 7;
+				NUM_ENEMIES = 100;
+				makeEnemies();
+				kill++;
+				game.initKeys();
+			} if (kill == 500) {
+				alert("Congradulation! You saved human, you saved the world!");
+				game.stop();
+				document.location.href = "";
+			}
+		}
+			
+		
+		function makeBullets() {
+			//Create bullets
+			bulletsArray = new Array(NUM_BULLETS); 
+			for (i = 0; i < NUM_BULLETS; i++){
+				bulletsArray[i] = new bullets();
+			} // end for
+		}
+
+
+		function updateBullets() {
+			for (i = 0; i < NUM_BULLETS; i++){
+				bulletsArray[i].update();
+			} // end for
+		} // end updateBullets
+		
+		
+		function faceMouse() {
+			var dx = document.mouseX - character.x;
+			var dy = document.mouseY - character.y;
+			turnAngle = Math.atan2(dy, dx);
+			character.imgAngle = turnAngle;
+			
+			//turnAngleDegree = turnAngle * 360 / (2 * Math.PI);
+			//output.innerHTML = "turnAngle: " +turnAngleDegree;
+		}//end faceMouse()
+        
+		
+		function checkKeys(){
+            if (keysDown[K_A]){
+                character.x = character.x - 10;
+            }
+            if (keysDown[K_D]){
+                character.x = character.x + 10;
+            }                
+            if (keysDown[K_W]){
+                character.y = character.y - 10;
+            }             
+            if (keysDown[K_S]){
+                character.y = character.y + 10;
+            }    
+		}//end checkKeys()
+		
+		
+		function doMouseDown(event){
+			if (currentBullet >= NUM_BULLETS){
+				currentBullet = 0;
+            } // end currentBall if
+			//fire the new bullet
+			gunMP3.stop();
+			gunMP3.play();
+            bulletsArray[currentBullet].fire();
+			currentBullet++;
+		}//end doMouseDown()	
+		
+		
+		function bullets(){
+			tBullets = new Sprite(game, "bullet.png", 30, 7.5);
+            tBullets.hide();
+			
+			tBullets.fire = function(){
+                this.show();
+                this.setSpeed(15);
+                this.setBoundAction(DIE);
+                this.setPosition(character.x, character.y);
+                this.setAngle(character.getImgAngle());
+                this.setSpeed(20);
+            } // end fire
+			
+			return tBullets;
+		}//end tBullets()
+		
+		
+		function update(){
+            game.clear();
+            background.update();
+			character.update();
+			checkKeys();
+			
+			checkLevel();
+			
+			faceMouse();
+			updateBullets();
+			updateEnemies();
+			updateScore();
+        } // end update
+		
+		
+		function init(){
+			scoreboard = document.getElementById("scoreboard");
+			game = new Scene();
+			background = new Background();
+			character = new Character();
+			
+			
+			getHighScore();
+			
+			//Create bullets
+			makeBullets();
+			//Create enemies
+			makeEnemies();
+			//gaming timer
+			timer = new Timer();
+			
+			//create sounds
+			hurt = new Sound("hurt.mp3");
+			hurt.stop = function() {
+				this.snd.pause(); 
+				this.snd.currentTime = 0.0; 
+			} 
+			die = new Sound("die.mp3");
+			die.stop = function() {
+				this.snd.pause(); 
+				this.snd.currentTime = 0.0; 
+			} 
+			bgm = new Sound("bgm.mp3");
+			bgm.snd.loop = true;
+			bgm.play();
+			gunMP3 = new Sound("M4.ogg");
+			gunMP3.stop = function() {
+				this.snd.pause(); 
+				this.snd.currentTime = 0.0; 
+			} 
+			
+			game.start();
+			//Add a mouse click event: fire()
+			game.canvas.addEventListener("mousedown", doMouseDown, false);
+		}
+				
+				
+    </script>
+</head>
+<body onload = "init()">
+	<div id = "scoreboard" class="unselectable">
+		
+	</div>
+	
+</body>
+</html>
