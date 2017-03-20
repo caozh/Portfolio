@@ -1,0 +1,1 @@
+You need to install openCV (C++) library into your compiler to run this project.
