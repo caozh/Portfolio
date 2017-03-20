@@ -1,0 +1,19 @@
+body {
+	text-align: center;	
+	background-color: gray;
+}
+
+em {
+	color: red;
+}
+
+#green {
+	color: white;
+}
+
+#left {
+	text-align: left;
+}
+#right {
+	text-align: right;
+}
