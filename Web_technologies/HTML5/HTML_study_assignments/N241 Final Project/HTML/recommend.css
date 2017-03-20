@@ -1,0 +1,17 @@
+body {
+	background-image: url(images/sunshine.jpg);
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-color: #000;
+	}
+
+#index-color {
+	color: #FFF;
+	}
+	
+a:link, a:visited { color: #FFF; text-decoration: none; font-weight: normal; } 
+a:active, a:hover { color: #7FFFD4; text-decoration: underline; }
+
+#middle-right-text {
+	color: #FFF;
+	}

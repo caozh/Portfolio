@@ -1,0 +1,7 @@
+#page
+{
+	/* This attribute only be supported on CSS3 */
+	opacity: 0.8;
+	filter: alpha(opacity = 30);
+	background-color: #000;
+}

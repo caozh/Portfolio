@@ -1,0 +1,19 @@
+body {
+	background-color: #FFF8DC;
+	font-family: sans-serif;
+}
+
+h1 {
+	color: #4B0082;
+	text-align: center;
+
+}
+
+h2, h3, h4 {
+	color: #8B0000;
+
+}
+
+p.timeline {
+	text-indent: 2em;
+} 

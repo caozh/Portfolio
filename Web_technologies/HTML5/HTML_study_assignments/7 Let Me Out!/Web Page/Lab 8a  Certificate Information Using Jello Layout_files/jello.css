@@ -1,0 +1,182 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+body 
+{
+
+	font-family: "Trebuchet MS", Helvetica, sans-serif; 
+ 
+	background-color: #f2f2f2;  /* F4F1EC */
+ 
+	font-size: 0.75em; 
+ 
+	color: #555;
+ 
+	margin:10px;
+
+}
+
+
+
+h1 
+{
+	margin-top:10px;
+	margin-left:0px; 
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; 
+	font-size:2em; 
+}
+
+
+h2 
+{
+	font-size:1.3em; 
+	color:#1963D1; 
+}
+
+
+p  
+{ 
+	text-align: justify; 
+}
+
+/* Contains entire contents of the page */
+
+
+#page 
+{
+	width: 900px;
+ 
+	border: 1px solid #ccc; 
+ 
+	background-color:#ddd;
+ 
+	margin-left: auto;
+ 
+	margin-right: auto;
+
+}
+
+
+#title 
+{
+
+	padding:1px;
+ 
+	background-color:#aaa;
+ 
+	color:#eee;
+ 
+	text-align: center;
+
+}
+
+
+#overview 
+{
+ 	padding-top:1px;
+
+	padding-bottom:1px;
+ 
+	padding-left:10px; 
+ 
+	padding-right:10px;
+ 
+	background-color:#F4F1EC;
+
+}
+
+
+#middle 
+{
+	clear: both;
+ 
+	margin-top:0px;
+
+}
+
+
+#left 
+{
+
+	width: 60%;
+ 
+	float: left;
+ 
+	margin-top:0px;
+ padding: 10px;
+ 
+	background-color:#fff;
+
+}
+
+
+#right 
+{
+ 
+	width: 35%;
+ 
+	float: right;
+ 
+	margin-top:0px;
+ 
+	padding: 10px;
+ 
+	margin-bottom:auto;
+ 
+	background-color:#ddd;
+
+}
+
+
+#bottom 
+{
+
+	clear:both;
+ 
+	padding: 10px;
+ 
+	background-color:#fff;
+}
+
+
+
+#footer 
+{
+
+	clear:both;
+ 
+	padding:1px;
+ 
+	background-color:#F4F1EC;
+ 
+	text-align:center;
+ 
+	font-size:.8em;
+
+}
+
+
+#footer 
+p 
+{ 
+ 
+	text-align:center;
+ 
+	margin-left:auto; 
+ 
+	margin-right:auto;
+
+}
+
+
+#footer img 
+{ 
+	border:0px; 
+	display : block;
+	
+margin-left : auto;
+
+	margin-right : auto;  
+}

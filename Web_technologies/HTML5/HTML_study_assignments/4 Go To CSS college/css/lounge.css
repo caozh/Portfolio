@@ -1,0 +1,49 @@
+body {
+	background-color: #FFFFE0;
+	color: red;
+	font-family: sans-serif;
+	font-size: small;
+}
+
+h1, h2 {
+	color: #808080;
+	font-size: 150%;
+	font-weight: bold;
+}
+
+h1 {
+	border-bottom: 1px solid black;
+	font-size: 41px;
+	color: #696969;
+	font-weight: bolder;
+}
+
+p.greentea {
+	color: green;
+}
+
+p.raspberry {
+	color: blue;
+}
+
+p.blueberry {
+	color: purple;
+}
+ 
+em {
+	color: #008000;
+}
+
+#elixirs a:link {
+	color: #F4A460;
+}
+
+#elixirs a:visited {
+	color: #00FF7F;
+}
+
+#elixirs a:hover {
+	background: #f88396;
+	color: #F4A460;
+}
+

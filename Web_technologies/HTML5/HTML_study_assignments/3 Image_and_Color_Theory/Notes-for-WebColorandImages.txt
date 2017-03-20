@@ -1,0 +1,82 @@
+Graphic Interchange Format (GIF)
+advantage: Lossless\transparency\well-suited for images with large 	areas of flat color
+disadvantage:  up to 8-bit(256 colors)
+
+Joint Photographic Exerts Group (JPEG)
+advantage: 24-bit(16,777,216 colors)\Can select comression ratios\
+	large gradations(photos, not for flat colors images)
+disadvantage: Lossy\Must be decompressed before display
+
+Portable Network Graphic (PNG)
+advantage: Lossless\transparency\up tp 24-bit\
+	built-in Gamma correction and includes text capabilities 	for notes such as copyright information\
+	well-suited for images with large areas of flat color\
+disadvantage: heavy file size\
+
+
+<img /> should inside the <p> element or another block-level element.
+
+
+<img /> attributes:
+1. src
+2. id
+3. height/width
+4. usemap(specifies the location)
+
+Using an Image as a Link
+
+We can create an image to serve as a link by nesting the <img /> element inside an <a> element, like this: 
+<a href=¡°http://www.iupui.edu¡±>    
+	<img src = ¡°images/logo.gif¡± />
+</a>
+
+
+get rid of Ugly Borders
+<style> element:
+img
+{
+	border:none;
+}
+
+
+
+<map> Element
+Attributes:id(XHTML)\name(HTML)
+
+To define the coordinates, put <area /> insede the <map>
+Attributes for <area />:
+1. href
+2. shape (rect\circle\poly)
+3. alt (for describing)
+4. coords (specifies the coordinates of the hotspot)
+
+
+Circle: find the center and radius
+<area shape = ¡°circ¡±
+      coords = ¡°75,85,69¡± />  (x,y,r)
+
+Rectangle: find the Xs and Ys of upper-left and lower-right corners, respectively
+<area shape = ¡°rect¡±
+      coords = ¡°60,66,115,226¡± />
+
+The Polygon Shape:To find the X & Y coordinates of each of the corners; the first and last pair of coordinates are the same:
+<area shape = ¡°poly¡±
+      coords = ¡°206,145, ... ,206,145¡± />
+
+
+
+Linking an Image to <map>:
+<img src = ¡°images/myMap.png¡±
+     usemap = ¡°#mapDef¡± />
+
+
+
+
+
+
+
+
+
+
+
+

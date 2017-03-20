@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Cellphone-survey</title>
+	<link type="text/css" rel="stylesheet" href="surveyForm.css" />
+	<link type="text/css" rel="stylesheet" href="opacity.css" />
+	<!--
+    TITLE: Cellphone survey form
+    AUTHOR: Zhihao Cao
+    PURPOSE: XHTML form elements practice
+    ORIGINALLY CREATED ON: Apr. 3, 2012
+    LAST MODIFIED ON:   
+	BY:
+    MODIFICATION HISTORY: 
+    -->	
+  </head>
+  
+  <body>
+  <!-- Create a page that has the "page" attribute-->
+  <div id = "page">
+  <h1>Cellphone survey</h1>
+  <!-- Create a form-->
+  <form action = " " method = "post">
+	<fieldset>
+		<legend>Basic information</legend>
+		<!--Create text input bars-->
+		<p>Name: <input type="text" name="username" /></p>
+		<p>Age: <input type="text" name="Age" /></p>
+		<p>Gender: <br />	
+		<!--Create radio bars-->
+		<input type="radio" name="gender" value="male"/>Male
+		<br />
+		<input type="radio" name="gender" value="female"/>Female</p>
+	</fieldset>
+	
+	<fieldset>
+		<legend>What kind of cellphone do you want</legend>
+		<p>
+		Brand: 
+		<!--Create checkboxes-->
+		<input type="checkbox" name="Brand" value="Apple" /> Apple
+		<input type="checkbox" name="Brand" value="Samsung" /> Samsung
+		<input type="checkbox" name="Brand" value="HTC" /> HTC
+		<input type="checkbox" name="Brand" value="Moto" /> Moto
+		<input type="checkbox" name="Brand" value="Sony" /> Sony
+		<input type="checkbox" name="Brand" value="Nokia" /> Nokia
+		<input type="checkbox" name="Brand" value="LG" /> LG 
+		<br />
+		<br />
+		Screen size:
+		<!--Create radio bars-->
+		<input type="radio" name="ScreenSize" value="less"/>Less than 3.5"
+		<input type="radio" name="ScreenSize" value="3.5-4.0"/>3.5"~4.0"
+		<input type="radio" name="ScreenSize" value="4.0-4.3"/>4.0"~4.3"
+		<input type="radio" name="ScreenSize" value="4.3-4.7"/>4.3"~4.7"
+		<input type="radio" name="ScreenSize" value="more"/>larger than 4.7"
+		<br />
+		<br />		
+		Memory: 
+		<!--Create radio bars-->
+		<input type="radio" name="Memory" value="512"/>512MB
+		<input type="radio" name="Memory" value="1GB"/>1GB
+		<input type="radio" name="Memory" value="more"/>more than 1GB
+		<br />
+		<br />		
+		Thickness:
+		<!--Create radio bars-->
+		<input type="radio" name="Thickness" value="less"/>less than 7mm
+		<input type="radio" name="Thickness" value="7"/>7mm~10mm
+		<input type="radio" name="Thickness" value="10"/>10mm~15mm
+		<input type="radio" name="Thickness" value="15"/>15mm~20mm
+		<input type="radio" name="Thickness" value="more"/>higher than 20mm
+		<br />
+	    <br />	
+		Weight:
+		<!--Create radio bars-->
+		<input type="radio" name="Weight" value="less"/>less than 70g
+		<input type="radio" name="Weight" value="70"/>70g~100g
+		<input type="radio" name="Weight" value="100"/>100g~130g
+		<input type="radio" name="Weight" value="130"/>130g~160g
+		<input type="radio" name="Weight" value="more"/>higher than 160g
+		<br />
+		<br />
+		Resolution: 
+		<!--Create a select bar-->
+		<select name = "Resolution">
+			<option value = "240*320">240*320</option>
+			<option value = "320*480">320*480</option>
+			<option value = "480*800">480*800</option>
+			<option value = "960*640">960*640</option>
+			<option value = "720*1280">720*1280</option>
+			<option value = "more">higher than 720*1280</option>
+		</select>
+		<br />
+		<br />
+		Price:
+		<!--Create a select bar-->
+		<select name = "Price">
+			<option value = "less">less than $200</option>
+			<option value = "200">$200~$400</option>
+			<option value = "400">$400~$600</option>
+			<option value = "600">$600~$800</option>
+		</select>
+		</p>
+	</fieldset>
+	
+	<p class = "center">How many cellphones have you had?<br />
+	<!-- textarea creates a muti-line text area that you can type into-->
+	<textarea name="response" id="textresponse" rows="5" cols="40"></textarea>
+	</p>
+	
+	<!-- set the submit button center-->
+	<div class = "center">
+	<input type="submit"/> 
+	<input type ="reset"/>
+	</div>
+	
+  <!-- end the form-->	
+  </form>
+  </div>
+  </body>
+</html>
+	
+	
+	

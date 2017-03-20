@@ -1,0 +1,54 @@
+body {
+	background-color: #00BFFF;
+}
+
+table {
+	margin-left: 20px;
+	margin-right: 20px;
+	border: thin solid black;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+td, th {
+	border: thin solid black;
+	padding: 5px;
+}
+
+caption {
+	font-style: italic;
+	padding-top: 18px;
+	padding-bottom: 18px;
+	font-size: 300%;
+}
+th {
+	background-color: #FF00FF;
+	border-width: 2px;
+}
+
+.sleep {
+	background-color: #FF4500;
+}
+.homework {
+	background-color: #7FFF00;
+}
+
+.class {
+	background-color: #FF1493;
+}
+
+.game {
+	background-color: #00FFFF;
+}
+
+.lounch {
+	background-color: #DAA520
+}
+
+.job {
+	background-color: #B22222
+}
+
+.dinner {
+	background-color: #E9967A
+}

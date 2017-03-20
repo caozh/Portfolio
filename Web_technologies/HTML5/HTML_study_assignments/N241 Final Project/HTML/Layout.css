@@ -1,0 +1,314 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font-family: "Trebuchet MS", Helvetica, sans-serif; 
+	background-image: url(images/flower.jpg);
+	/*	background-size: 1280px 800px;
+	background-repeat: no-repeat;*/
+	background-position: top center;
+	background-attachment:fixed;
+
+	color: #fff; 
+	}
+	
+a:link, a:visited { color: #D3D3D3; text-decoration: none; font-weight: normal; } 
+a:active, a:hover { color: #7FFFD4; text-decoration: underline; }
+
+img { margin: 0px; padding: 0px; border: none; }
+		
+.cleaner { clear: both; width: 100%; height: 0px; font-size: 0px;  }
+
+h1 {
+	line-height: 47px;
+	}
+
+h2 {
+	padding-top: 50px;
+	font-size: 35px;
+	margin: 50px
+	
+	}
+	
+	
+#page { 
+	width:1200px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+	
+	
+#title-describe {
+	font-size: 40px;
+	padding-right: 50px;
+	}
+	
+
+	
+#left {
+	float: left;
+	margin-top:40px;
+	}
+	
+
+#right {
+	float: right;
+	margin-top:5%;
+	padding: 10px;
+	margin-bottom:auto;
+	z-index:10;
+	position: relative;
+	}
+	
+#middle-page {
+	}
+	
+#middle-left {
+	float: left;
+	width: 13%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 190px;
+	margin-bottom: 30px;
+	line-height: 30px;
+	font-size: 20px;
+	text-align: left;
+	position: fixed;
+	}
+#index-color {
+	color: #FFF;
+	font-size: 0.8em;
+	}
+	
+#middle-left li {
+	text-indent:30px;
+	font-size: 15px;
+	}
+	
+#middle-right {
+	float: right;
+	width: 78%;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	color: #FFFFFF;
+	z-index: 5;
+	}
+	
+#middle-right-background{
+	width: 100%;
+	/* This attribute only be supported on CSS3 */
+	opacity: 0.5;
+	filter: alpha(opacity = 50);
+	background-color: #000;
+	z-index: 1;
+	float: right;
+	height: 800px;
+	}
+	
+#middle-right-background2{
+	width: 100%;
+	/* This attribute only be supported on CSS3 */
+	opacity: 0.5;
+	filter: alpha(opacity = 50);
+	background-color: #000;
+	z-index: 1;
+	float: right;
+	height: 4800px;
+	}
+	
+#middle-right-background3{
+	width: 100%;
+	/* This attribute only be supported on CSS3 */
+	opacity: 0.5;
+	filter: alpha(opacity = 50);
+	background-color: #000;
+	z-index: 1;
+	float: right;
+	height: 3000px;
+	}
+	
+#middle-right-background4{
+	width: 100%;
+	/* This attribute only be supported on CSS3 */
+	opacity: 0.5;
+	filter: alpha(opacity = 50);
+	background-color: #000;
+	z-index: 1;
+	float: right;
+	height: 800px;
+	}
+	
+#middle-right-background5{
+	width: 100%;
+	/* This attribute only be supported on CSS3 */
+	opacity: 0.5;
+	filter: alpha(opacity = 50);
+	background-color: #000;
+	z-index: 1;
+	float: right;
+	height: 2000px;
+	}
+	
+#middle-right-text {
+	width: 900px;
+	position: absolute;
+	padding: 20px;
+	z-index: 8;
+	color: #D3D3D3;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	text-align: left;
+	text-indent:50px;
+	font-size: 20px;
+	line-height: 35px;
+	}
+	
+#middle-right-text h2 {
+	    border-top-width: 2px;
+        border-top-style: double;
+        border-top-color: #fff;
+		line-height: 50px;
+	}
+	
+#middle-right-text div {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	}
+#tv {
+	float: right;
+	position: relative;
+	z-index: 8;
+}
+
+#case {
+	right: 50px;
+	top: 200px;
+	position: fixed;
+	
+	}
+	
+#cpu1 {
+	float: right;
+	position: relative;
+	z-index: 8;
+	padding-top: 15px;
+	}
+#cpu2 {
+	float: left;
+	position: relative;
+	z-index: 8;
+	padding-top: 25px;
+	padding-right: 20px;
+	}	
+
+#memory1 {
+	float: right;
+	position: relative;
+	z-index: 8;
+	padding-top: 5px;
+	padding-right: 20px;
+	}	
+
+#hdd1 {
+	float: left;
+	position: relative;
+	z-index: 8;
+	padding-top: 5px;
+	padding-right: 20px;
+	}	
+	
+#motherboard1 {
+	float: right;
+	position: relative;
+	z-index: 8;
+	padding-right: 20px;
+	}	
+
+#saveMoney {
+	float: right;
+	position: relative;
+	z-index: 8;
+	padding-right: 20px;	
+	}
+
+p#overall {
+	font-style: italic;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	text-align: left;
+	text-indent:50px;
+	font-size: 20px;
+	line-height: 35px;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #D3D3D3;
+	}
+
+overall2 {
+	padding-left: 20px;
+	padding-right: 20px;
+	}
+	
+table {
+	margin-left: 20px;
+	margin-right: 20px;
+	border: thin solid #fff;
+
+	text-align: center;
+	}
+	
+caption {
+	font-style: italic;
+	padding-top: 18px;
+	padding-bottom: 18px;
+	font-size: 40px;
+	}
+	
+th{
+	text-align: left;
+	width: 200px;
+	line-height: 50px;
+}
+
+td {
+	text-align: center;
+	width: 300px;
+	}
+
+	
+	
+th.header {
+	border-bottom: thin solid #fff;
+	}
+	
+th.header2 {
+	border-bottom: thin solid #fff;
+	border-left: thin solid #fff;
+	text-align: center;
+	}
+	
+th.header3 {
+	border-bottom: thin solid #fff;
+	border-left: thin solid #fff;
+	text-align: center;
+	}
+	
+	
+th.header4 {
+	border-top: thin solid #fff;
+	text-align: center;
+	}
+	
+
+#footer {
+	clear:both;
+	padding:5px;
+	color: #fff;
+	text-align:center;
+	font-size:.8em;
+	}
+#footer p { 
+	text-align:center;
+	margin-left:auto; 
+	margin-right:auto;
+	}
+	

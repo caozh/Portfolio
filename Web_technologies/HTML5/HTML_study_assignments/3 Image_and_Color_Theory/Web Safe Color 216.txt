@@ -1,0 +1,1 @@
+We can compose Web Safe Colors by developing only colors that use the following hexadecimal pairs: 00, 33, 66, 99, CC, FF.

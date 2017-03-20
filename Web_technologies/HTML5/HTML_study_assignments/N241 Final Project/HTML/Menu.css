@@ -1,0 +1,23 @@
+﻿@charset "utf-8";
+html,body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,form,th,td{margin:0;padding:0;font-weight:normal;}
+body{font:12px Verdana, Arial, Helvetica, Simsun;text-align:center;vertical-align:middle;}
+ul{list-style:none;}
+#dymenu{width:680px;margin:0 auto;text-align:center;}
+#dymenu .root{background:#000;}
+#dymenu .root:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+#dymenu .root li{position:relative;float:left;}
+#dymenu .root a{color:#FFF;cursor:pointer;text-decoration:none;}
+#dymenu .root table{border-collapse:collapse;border-spacing:0;}
+#dymenu .root h3{height:45px;margin:0;padding:0 10px;background:#000;color:#FFF;font-size:18px;cursor:default;line-height:45px;width:150px;
+}
+#dymenu .root ul{display:none;height:25px;line-height:25px;font-size:15px}
+#dymenu .root a:hover,#dymenu .root a:hover h3,#dymenu .root li:hover h3{background:#778899;color:#000;}
+#dymenu .root a:hover ul,#dymenu .root li:hover ul{display:block;position:absolute;left:0;width:170px;background:#EEE;}
+#dymenu .root ul li{position:relative;float:none;border-top:1px solid #FFF;}
+#dymenu .root ul a{display:block;width:100%;text-indent:10px;background:#778899;color:#000;vertical-align:middle;height:25px}
+#dymenu .root ul a:hover{background:#DDD;color:#000;}
+#dymenu .root ul li h4{width:170px;background-color:#778899;font-size:15px;height:25px;line-height:25px;}
+#dymenu .root a:hover a ul,#dymenu .root li:hover li ul{display:none;position:static;background:none;}
+#dymenu .root a:hover a:hover h4,#dymenu .root li:hover li:hover h4{background:#778899;color:#000;cursor:pointer;}
+#dymenu .root a:hover a:hover ul,#dymenu .root li:hover li:hover ul{display:block;position:absolute;left:170px;top:0;margin-top:-1px;margin-top:0;background:#778899;}
+#dymenu .root ul ul li{border-left:1px solid #FFF;}
