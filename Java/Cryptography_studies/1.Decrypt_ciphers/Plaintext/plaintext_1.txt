@@ -1,0 +1,18 @@
+the enigma machines were a series of electro-mechanical rotor cipher machines developed and used in the early-to mid-twentieth century to protect commercial,
+diplomatic and military communication. enigma was invented by the german engineer arthur scherbius at the end of world war one. early models were used commercially
+from the early nineteen twenties, and adopted by military and government services of several countries, most notably nazi germany before and during world war two.
+several different enigma models were produced, but the german military models are the most commonly recognised. however, japanese and italian models have been used.
+
+german military messages enciphered on the enigma machine were first broken by the polish cipher bureau,beginning in december nineteen thirty two. this success was
+a result of efforts by three polish cryptanalysts, marian rejewski, jerzy rozycki and henryk zygalski, working for polish military intelligence. rejewski
+reverse-engineered the device, using theoretical mathematics and material supplied by french military intelligence. subsequently, the three mathematicians designed
+mechanical devices for breaking enigma ciphers, including the cryptologic bomb. from nineteen thirty eight onwards, additional complexity was repeatedly added to
+the enigma machines, making decryption more difficult and requiring further equipment and personnel-more than the poles could readily produce.
+
+on twenty six and twenty seven july nineteen thirty nine,in pyry near warsaw, the poles initiated french and british military intelligence representatives into their
+enigma-decryption techniques and equipment, including zygalski sheets and the cryptologic bomb, and promised each delegation a polish-reconstructed enigma. the demonstration
+represented a vital basis for the later british continuation and effort. during the war, british cryptologists decrypted a vast number of messages enciphered on enigma.
+alan turing was the central force in breaking the enigma. the intelligence gleaned from this source, codenamed "ultra" by the british, was a substantial aid to the allied war effort.
+
+though enigma had some cryptographic weaknesses, in practice it was german procedural flaws, operator mistakes, failure to systematically introduce changes in encipherment
+procedures, and allied capture of key tables and hardware that, during the war, enabled allied cryptologists to succeed and "turned the tide" in the allies' favor. the end.

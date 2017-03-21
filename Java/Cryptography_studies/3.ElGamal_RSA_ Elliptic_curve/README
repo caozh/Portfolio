@@ -1,0 +1,17 @@
+1. Without using a computer, calculate 2466,000,000,023 (mod 77). Hint: Using Chinese Remainder Theorem.
+2. Decrypt the ciphertext encrypted by ElGamal system (Prob. 6.9). (Note: change Exercise 5.6 to Exercise 5.12, if your textbook is 2nd edition).
+3. We discussed in class that RSA can be broken if prime p or q is selected inappropriately. Apart from that, RSA can fail if the protocol is not used appropriately. Different RSA protocol failures exist, of which Problem 5.16 is an example. Solve the problem to understand the reason.
+4. Suppose Elliptic curve E is defined by y2=x3+x+6 over Z1039. Since Z1039 is small, you can program to slove all the following problems.
+How many points are over E.
+What is the lexically largest point over E. Here lexically larger point means to order the points by the first coordination first and then the second coordination, E.g., (320, 100) > (319,500) and (320, 100)<(320,101).
+Does point (1014, 291) belong to E?
+Suppose alpha=(799,790) is a generator and beta=(385,749). (E, alpha, beta) is the ElGamal public key. Given the plaintext value (575,419) and random K=100, what is the ciphertext value?	Given the ciphertext value ((873,233), (234,14)), what is the plaintext value (Please note: if you re-encrypt the resulting plaintext value with K=100, you may not get back ((873,233), (234,14)), that is correct. As you recall, for whatever K is selected for encryption, the decrypted value is the same.)
+Suppose E and a generator alpha=(818,121) are public. Alice and Bob achieve a shared secret by doing Diffie-hellman key exchange. Alice sends Bob a value (199,72), and Bob sends Alice a value (815,519), what is the secret they achieve?
+Problems 5 [12 points] and 6 [8 points] are here
+Good luck and Have a fun.
+
+Author:
+Zhihao Cao
+
+Last modified:
+10/20/2016

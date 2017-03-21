@@ -1,0 +1,9 @@
+1. During a lunch, ten professors are expressing their concerns over salaries. They would each like to know how their salary comparies to the average salary (among these ten professors), but of course, no professor wants to divulge any information about his/her salary to the other nine. Devise a scheme which will allow the professors to compute the average of their salaries, while preserving their privacy. You may assume that all professors will adhere to the rules of the protocol, although they will try to extract as much information from the protocol as possible. Assume that it is public knowledge that each professor's salary is an integer in the range [0, 232). Note that if nine professors collude, they can determine the remaining professor's salary (given the average salary), so no scheme can hope to defend against this attack. However, your scheme should be robust against attacks where at most eight professors collude. It is easy to design a scheme which is correct (i.e., can compute the average correctly) but the important issue is that your scheme needs to guarantee: no collusion amaong two or more (upto 8) professors can figure out any remaining professor's salary.
+2.	Write a program to solve the Problem 6.17 of the textbook, based on Elliptic Curve Cryptosystem.
+Good luck and Have a fun.
+
+Author:
+Zhihao Cao
+
+Last modified:
+11/10/2016

@@ -1,0 +1,76 @@
+
+1. Implement the DES system in C++, Java, perl, etc. and then decrypt the ciphertext.
+ 
+	     (NOTE: copy DES parameters and ciphertext from http://www.cs.iupui.edu/~xkzou/teaching/csci55500/ciphers/hw2-ciphers-parameter-matrix.zip.)
+	     using key=8B2A7FF25E98C35D (in hexadecimal). The decrypted plaintext should be in 
+	     normal english text, not in hexadecimal.
+		(Hints: 
+	        1. the ciphertext is in hexadecimal, therefore you need to translate every two
+                  bytes in ciphertext into one byte in binary format. for example:
+		B85D, when you read from the file, you get four chars:  B,8,5,D.
+		B and 8 should change to one byte:10111000, and 5 and D shoud be 01011101.
+		2. you need to skip the new line character.
+		3. using the following result to verify your algorithm first:
+		plaintext (in hexadecimal): 0123456789ABCDEF
+		key  (in hexadecimal):      133457799BBCDFF1
+		ciphertext(in hexadecimal): 85E813540F0AB405
+		)
+	
+2. Decrypt the ciphertext encrypted by RSA method.
+		The encoding for the RSA is as following:
+		1) divide the plaintext into blocks.
+		2) each block forms a big number as following:
+		    (because all characters are from a 10X10 matrix) 
+		    find the row and column number from the matrix
+		    for the first character and the row number and column number 
+		    are connected together to form a partial number; 
+		    find the row and column number from the matrix 
+		    for the second character, then append the
+		    row number and column number to the above number,... 
+      	            for example: This homework....
+		    will be encoded to 527273830072798275... (because T is in 
+		    row 5 and column 2. Note: the row and column numbers begin from Zero.)				
+		3) encrypt each block using RSA method.
+		4) Therefore, after your decryption, you need to decode by
+		   changing every pair of two numbers (as row number and 
+		   column number) into a character by looking up the matrix.
+		5) you can get the ciphertext and matrix from http://www.cs.iupui.edu/~xkzou/teaching/csci55500/ciphers/hw2-ciphers-parameter-matrix.zip
+		6) Every row in the ciphertext is an encrypted RSA number. So
+                    you need to decrypt the ciphertext row by row.
+		7) Here is the public key for this RSA system:
+		    NN = 68102916241556953901301068745501609390192169871097881297 (modulo)
+		    bb = 36639088738407540894550923202224101809992059348223191165 (public exponent)
+		8) This problem needs big integer. There are several possibilities:
+			a). use Java which contains BigInteger class.
+			b). use GMP C library which contains operations on big integers
+                            and has been installed in pegasus. Here is a simple program
+                            to let you test and get familar with the usage of GMP library. 
+ 			    Here are the manual link: http://gmplib.org/manual/        
+			    and the integer function link: http://gmplib.org/manual/Integer-Functions.html#Integer-Functions
+			c). download C++ Big Integer Library from
+                            https://github.com/panks/BigInteger
+                        or  https://mattmccutchen.net/bigint/ 
+			d). download LiDIA  Big Integer library from
+			    https://github.com/mkoeppe/LiDIA 
+			    LiDIA is primarily for Unix/Linux.
+		9) There is a need to add one ZERO before the numbers having odd number of digits. 
+		10) Since there is no factorization function in the above Libraries
+                    you need to write your only Pollard p-1 factoring program to find the
+	           factor of NN in this problem. Note: set B=1500.
+
+		
+3. Given the Rabin Cryptosystem p=199, q=211, n=pq
+		1. Using the Rabin Cryptosystem ek(x)=x^2 mod n,
+			a) Compute the encryption y = ek(32767)
+			b) Determine the four possible decryptions of this given ciphertext y.
+
+		2. Given a new Rabin Cryptosystem ek(x) = x(x+B) mod n, where B=1357
+			a) Compute the encryption y = ek(32767)
+			b) Determine the four possible decryptions of this given ciphertext y.
+		
+Good luck and have a fun!
+Author:
+Zhihao Cao
+
+Last modified:
+9/28/2016
