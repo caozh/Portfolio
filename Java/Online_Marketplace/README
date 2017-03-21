@@ -1,0 +1,41 @@
+Subject:
+To study good object-orient software design and implementation practices centered on software design patterns and frameworks for distributed computing.
+
+Author:
+Zhihao Cao
+
+Last modified:
+3/10/2017
+
+Instruction:
+1. Download the source code from github repository to your tesla server directory.
+
+2. Open your putty window, and login into tesla server using your iu account.
+
+3. In the root directory, use command "cd [folder]/[folder]" to find the source code folder.
+
+4. In the root directory of source code folder, use command "make" to execute the "Makefile" to compile the code files.
+
+5. Use command "rmiregistry 1888&" to registry port number 1888 for the program.
+
+6. Use command "java -Djava.security.policy=policy MarketServer" to initiate the marketplace server.
+
+7. Open anohter putty window, and again, login into tesla server using your iu account.
+
+8. Using the same way as step 3, find source code folder.
+
+9. In the root directory of source code folder, use command "java -Djava.security.policy=policy MarketClient" to initiate client program.
+
+10. The login interface will be displayed if the client is successfully connected to the marketplace server over JAVA RMI.
+
+11. You can login as customer or administrator. 
+	Customer      -> username: "josephzelo", password: "asdasd"
+	Administrator -> username: "admin",      password: "admin"
+
+13. After you login successfully, you can send requests such as "addAdmin" as the menu shown. "addAdmin" request requires admin role to perform the task.
+
+14. You can send "exit" request to end the program.
+
+14. When you finish testing the program, remember go back to the server window, release the port by pressing 
+	"Ctr + c" and followed by the command "fg" and pressing "Ctr + c" again. Then you are good to exit both windows.
+	
