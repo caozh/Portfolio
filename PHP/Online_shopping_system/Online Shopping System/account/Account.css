@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	/*background-image: url(background.jpg);
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-color: #000;
+	color: #FFF;*/
+}
+
+.banner {
+    text-align: center;
+}
+.container {
+    margin: auto;
+	text-align: center;
+	font-size: 18px;
+    width: 900px;
+}
+
+/*Left content*/
+.left-content {
+    float: left;
+    width: 20%;
+    border-style: groove;
+}
+
+
+/*Right content*/
+.right-content {
+    float: right;
+    width: 78%;
+    /*border-style: groove;*/
+}
+
+fieldset {
+  width: 500px;
+  margin: auto;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+label {
+  float:left;
+  width: 150px;
+  clear: left;
+  text-align: right;
+  margin-right: 1em;
+}

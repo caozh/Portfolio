@@ -1,0 +1,19 @@
+Introduction
+
+The online shopping system is a secure and reliable online platform for 
+customer to customer (C2C) business. Sellers can put their products for 
+sale and buyers can purchase products through the Internet.
+Our software is to be developed for automating the running of online 
+shopping system. The system should be webpage in nature. Users have to 
+login to access the system . The system will show registered products 
+for users. The system allows users to place orders. And the system can 
+generate record of users, products, and orders.
+
+Languages:
+PHP, HTML, Javascript
+
+Author:
+Zhihao Cao
+
+Last modified:
+5/4/2015
