@@ -1,0 +1,97 @@
+use IFES52
+CREATE TABLE Membership
+( 
+	Membership_Code      char(6)  NOT NULL ,
+	Name                 char(20)  NULL ,
+	Start_Date           datetime  NULL ,
+	End_Date             datetime  NULL ,
+	DOB                  datetime  NULL ,
+	 PRIMARY KEY  CLUSTERED (Membership_Code ASC)
+)
+go
+
+CREATE TABLE Category
+( 
+	Cat_Code            char(5)  NOT NULL ,
+	Name                 char(20)  NULL ,
+	 PRIMARY KEY  CLUSTERED (Cat_Code ASC)
+)
+go
+
+CREATE TABLE Manager
+( 
+	Membership_Code      char(6)  NOT NULL ,
+	Last_Acc            datetime  NULL ,
+	Cat_Code            char(5)  NULL ,
+	 PRIMARY KEY  CLUSTERED (Membership_Code ASC),
+	 FOREIGN KEY (Membership_Code) REFERENCES Membership(Membership_Code),
+ FOREIGN KEY (Cat_Code) REFERENCES Category(Cat_Code)
+)
+go
+
+CREATE TABLE Director
+( 
+	Membership_Code      char(6)  NOT NULL ,
+	NextVisit            datetime  NULL ,
+	 PRIMARY KEY  CLUSTERED (Membership_Code ASC),
+	 FOREIGN KEY (Membership_Code) REFERENCES Membership(Membership_Code)
+)
+go
+
+CREATE TABLE Classification
+( 
+	Class               char(6)  NOT NULL ,
+	Charge               money  NULL ,
+	Name                 char(20)  NULL ,
+	Cat_Code            char(5)  NOT NULL ,
+	 PRIMARY KEY  CLUSTERED (Class ASC),
+	 FOREIGN KEY (Cat_Code) REFERENCES Category(Cat_Code)
+)
+go
+
+CREATE TABLE Rating
+( 
+	Rating               char(5)  NOT NULL ,
+	Name                 char(15)  NULL ,
+	 PRIMARY KEY  CLUSTERED (Rating ASC)
+)
+go
+
+CREATE TABLE Work
+( 
+	Work_No             int  NOT NULL ,
+	Class               char(6)  NOT NULL ,
+	Title                char(30)  NULL ,
+	Size                int  NULL ,
+	Run_Time             int  NULL ,
+	Rating               char(5)  NOT NULL ,
+	Date_Added           datetime  NULL ,
+	Loc                  char(1)  NULL ,
+	 PRIMARY KEY  CLUSTERED (Work_No ASC,Class ASC),
+	 FOREIGN KEY (Class) REFERENCES Classification(Class),
+ FOREIGN KEY (Rating) REFERENCES Rating(Rating)
+)
+go
+
+CREATE TABLE Passenger
+( 
+	Membership_Code      char(6)  NOT NULL ,
+	Num_Acc            int  NULL ,
+	 PRIMARY KEY  CLUSTERED (Membership_Code ASC),
+	 FOREIGN KEY (Membership_Code) REFERENCES Membership(Membership_Code)
+)
+go
+
+CREATE TABLE Access
+( 
+	Access_No           int  NOT NULL ,
+	Access_Date          datetime  NOT NULL ,
+	Membership_Code      char(6)  NULL ,
+	Work_No             int  NOT NULL ,
+	Class               char(6)  NOT NULL ,
+	Access_Time          int  NULL ,
+	 PRIMARY KEY  CLUSTERED (Access_No ASC,Access_Date ASC),
+	 FOREIGN KEY (Work_No,Class) REFERENCES Work(Work_No,Class),
+ FOREIGN KEY (Membership_Code) REFERENCES Passenger(Membership_Code)
+)
+go

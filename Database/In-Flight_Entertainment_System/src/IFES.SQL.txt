@@ -1,0 +1,250 @@
+-- Insert into Category
+use IFES52
+
+INSERT INTO Category VALUES('MU', 'Music');
+INSERT INTO Category VALUES('SS', 'Short');
+INSERT INTO Category VALUES('MO', 'Movie');
+
+use IFES52
+SELECT *
+FROM Category;
+
+--insert into classification
+use IFES52
+INSERT INTO Classification VALUES('ST', 3,'Show Tunes','MU');
+INSERT INTO Classification VALUES('Dram', 4,'Drama','SS');
+INSERT INTO Classification VALUES('Fan', 5,'Fantasy','MO');
+INSERT INTO Classification VALUES('SiFi', 5,'Science Fiction','MO');
+INSERT INTO Classification VALUES('Folk', 2,'Folk Tunes','MU');
+
+SELECT *
+FROM Classification;
+
+--insert into Membership
+INSERT INTO Membership VALUES('MC0000', 'Bob Bureaucarat',NULL,NULL,NULL);
+INSERT INTO Membership VALUES('MC0101', 'Sam Supervisor',NULL,NULL,NULL);
+INSERT INTO Membership VALUES('MC0102', 'Mary Manager',NULL,NULL,NULL);
+INSERT INTO Membership VALUES('MC0103', 'Fred Foreman',NULL,NULL,NULL);
+INSERT INTO Membership VALUES('MC1014', 'John Doe','12/11/08',NULL,'01/11/88');
+INSERT INTO Membership VALUES('MC1011', 'Mary Smith','03/11/11',NULL,'07/04/76');
+INSERT INTO Membership VALUES('MC1009', 'Mike Smith','01/23/11',NULL,'02/02/75');
+INSERT INTO Membership VALUES('MC1035', 'Ann Black','03/12/11','03/16/11','06/17/72');
+INSERT INTO Membership VALUES('MC0800', 'Ken White','03/12/99','03/30/11','07/07/66');
+INSERT INTO Membership VALUES('MC1039', 'Jane Dough','03/14/11','03/14/11','12/25/90');
+INSERT INTO Membership VALUES('MC1040', 'Karen Kline','03/14/11',NULL,'05/05/88');
+INSERT INTO Membership VALUES('MC1045', 'Jack Jones','01/22/01',NULL,'07/23/80');
+INSERT INTO Membership VALUES('MC1022', 'Bill Doe','03/11/11',NULL,'01/04/01');
+INSERT INTO Membership VALUES('MC1023', 'Kelly Doe','03/15/11',NULL,'06/06/06');
+INSERT INTO Membership VALUES('MC0900', 'James Mason','05/22/99',NULL,'02/23/80');
+INSERT INTO Membership VALUES('MC1065', 'Joe Grey','01/13/11',NULL,'11/23/95');
+
+SELECT *
+FROM Membership;
+
+--Insert into Rating
+INSERT INTO Rating VALUES('NR', 'Not Rated');
+INSERT INTO Rating VALUES('G', 'General');
+INSERT INTO Rating VALUES('PG', 'Age ? to 12');
+INSERT INTO Rating VALUES('PG13', 'Age > 12');
+INSERT INTO Rating VALUES('R', 'Age > 17');
+INSERT INTO Rating VALUES('MA', 'Age > 21');
+
+SELECT *
+FROM Rating
+
+
+--Insert into Work
+INSERT INTO Work VALUES('05', 'ST', 'Annie',600,80,'NR','03-01-13','E');
+INSERT INTO Work VALUES('02', 'Dram', 'West Wing',590,53,'NR','02-01-13','D');
+INSERT INTO Work VALUES('01', 'Fan', 'Harry Potter',4000,152,'PG','01-01-14','D');
+INSERT INTO Work VALUES('03', 'Fan', 'Phantom of the Opera',3500,141,'PG13','05-01-15','D');
+INSERT INTO Work VALUES('06', 'SiFi', 'King Kong',2500,100,'NR','07-01-15','D');
+INSERT INTO Work VALUES('10', 'SiFi', 'War of the Worlds',2800,117,'PG13','06-01-15','D');
+INSERT INTO Work VALUES('04', 'Folk', 'Carpenters Gold',680,95,'NR','11-01-14','E');
+INSERT INTO Work VALUES('07', 'ST', 'J.C.Superstar',590,53,'NR','01-01-14','E');
+
+INSERT INTO Work VALUES('13', 'Fan', 'Alice in Wonderland',2700,109,'PG','03-01-15','D');
+
+INSERT INTO Work VALUES('14', 'SiFi', 'Galaxy Quest',2500,102,'PG','01-01-14','D');
+INSERT INTO Work VALUES('09', 'SiFi', 'War of the Worlds',3800,97,'R','01-01-14','D');
+INSERT INTO Work VALUES('08', 'ST', 'Phantom of the Opera',627,78,'NR','01-01-14','E');
+INSERT INTO Work VALUES('07', 'Fan', 'Blazing Saddlers',3000,93,'R','04-01-15','D');
+INSERT INTO Work VALUES('11', 'Fan', 'Alice in Wonderland',2500,75,'G','07-01-14','D');
+INSERT INTO Work VALUES('12', 'Fan', 'Alice in Wonderland',2900,83,'MA','07-01-14','D');
+INSERT INTO Work VALUES('04', 'SiFi', 'West World',2000,88,'PG','07-01-14','D');
+INSERT INTO Work VALUES('01', 'Folk', 'James Taylor(album)',2000,152,'NR','06-01-14','E');
+INSERT INTO Work VALUES('01', 'Dram', 'Avengers',2000,52,'NR','06-01-14','E');	
+
+SELECT *
+FROM Work
+
+--Insert into Passenger
+INSERT INTO Passenger VALUES('MC1014',6);
+INSERT INTO Passenger VALUES('MC1011',2);
+INSERT INTO Passenger VALUES('MC1009',3);
+INSERT INTO Passenger VALUES('MC1035',2);
+INSERT INTO Passenger VALUES('MC0800',1);
+INSERT INTO Passenger VALUES('MC1039',1);
+INSERT INTO Passenger VALUES('MC1040',1);
+INSERT INTO Passenger VALUES('MC1045',2);
+INSERT INTO Passenger VALUES('MC1022',1);
+INSERT INTO Passenger VALUES('MC1023',1);
+INSERT INTO Passenger VALUES('MC0900',0);
+INSERT INTO Passenger VALUES('MC1065',0);
+
+SELECT *
+FROM Passenger;
+
+--Insert into Access
+INSERT INTO Access VALUES(77,'03/03/15',NULL,'05','ST',43);
+INSERT INTO Access VALUES(20,'03/10/15',NULL,'02','Dram',42);
+INSERT INTO Access VALUES(21,'03/10/15','MC1014','01','Fan',152);
+INSERT INTO Access VALUES(33,'03/11/15','MC1014','03','Fan',43);
+INSERT INTO Access VALUES(57,'03/12/15','MC1011','06','SiFi',100);
+INSERT INTO Access VALUES(54,'03/12/15','MC1009','10','SiFi',115);
+INSERT INTO Access VALUES(98,'03/13/15','MC1009','04','Folk',37);
+INSERT INTO Access VALUES(30,'03/13/15','MC1009','07','ST',92);
+INSERT INTO Access VALUES(80,'03/13/15','MC1035','10','SiFi',45);
+INSERT INTO Access VALUES(44,'03/15/15','MC1035','13','Fan',85);
+INSERT INTO Access VALUES(45,'03/15/15','MC0800','01','Fan',152);
+INSERT INTO Access VALUES(82,'03/15/15','MC1039','14','SiFi',95);
+INSERT INTO Access VALUES(43,'03/15/15','MC1014','09','SiFi',60);
+INSERT INTO Access VALUES(54,'03/15/15','MC1014','08','ST',25);
+INSERT INTO Access VALUES(60,'03/15/15','MC1040','07','Fan',95);
+INSERT INTO Access VALUES(91,'03/15/15','MC1045','11','Fan',60);
+INSERT INTO Access VALUES(95,'03/16/15','MC1045','12','Fan',95);
+INSERT INTO Access VALUES(98,'03/16/15','MC1011','04','SiFi',75);
+INSERT INTO Access VALUES(91,'03/16/15','MC1014','01','Folk',152);
+INSERT INTO Access VALUES(82,'03/16/15','MC1014','01','Dram',25);
+
+SELECT *
+FROM Access 
+
+--Insert into Manager
+INSERT INTO Manager VALUES('MC0101', NULL,'MU');
+INSERT INTO Manager VALUES('MC0102', NULL,'MO');
+INSERT INTO Manager VALUES('MC0103', NULL,'SS');
+
+SELECT *
+FROM Manager 
+
+--Insert into Director
+INSERT INTO Director VALUES('MC0000',NULL);
+
+SELECT *
+FROM Director 
+
+
+------Queries
+--1. What is the longest access time for a science fiction work?
+
+use IFES52
+go
+SELECT MAX(A.Access_Time)
+FROM Access A, Work W, Classification C
+WHERE C.Class = 'SiFi'
+AND C.Class = W.Class
+AND W.Class = A.Class
+AND W.Work_No = A.Work_No;
+
+
+--2. For each access, list all of its access times (along with its work number) in chronological (date)order.
+	
+use IFES52
+go
+SELECT Work_No,Access_Time
+FROM Access
+ORDER BY Access_Date
+
+--3. What is the full name for category SS?
+use IFES52
+go
+SELECT Name
+FROM Category
+WHERE Cat_Code = 'SS'
+
+--4. List the access times that are within 5 minutes of the run time for the work.
+use IFES52
+go
+SELECT  A.Run_Time, A.Access_Time
+FROM (
+	SELECT W.Run_Time, A.Access_Time
+	FROM Access A, Work W
+	WHERE W.Work_No = A.Work_No
+	AND   W.Class = A.Class) A
+WHERE (A.Run_Time       - A.Access_Time >= 0
+	AND A.Run_Time    - A.Access_Time <  5)
+OR  (A.Access_Time    - A.Run_Time    >  0
+	AND A.Access_Time - A.Run_Time    <  5)
+
+
+--5. List the access information for movies accessed in March 2015.
+use IFES52
+go
+SELECT Access_No, Access_Date, W.Work_No, W.Run_Time, A.Access_Time
+FROM Access A, Work W, Classification C, Category CT
+WHERE CT.Name = 'Movie'
+AND CT.Cat_Code = C.Cat_Code
+AND C.Class = W.Class
+AND W.Class = A.Class
+AND W.Work_No = A.Work_No
+AND (Access_Date >= '2015-3-1'
+	AND Access_Date < '2015-4-1')
+
+
+--6. What categories contain works added to the system in January 2014?
+use IFES52
+go
+
+SELECT DISTINCT CT.Name
+FROM Category CT, Classification C, Work W
+WHERE CT.Cat_Code = C.Cat_Code
+AND C.Class = W.Class
+AND W.Date_Added >= '2014-1-1'
+AND W.Date_Added <  '2014-2-1'
+
+
+-- 7. Where are the Short Subjects stored on the system?
+use IFES52
+go
+SELECT DISTINCT W.Loc
+FROM Category CT, Classification C, Work W
+WHERE CT.Name = 'Short Subject'
+AND CT.Cat_Code = C.Cat_Code
+AND C.Class = W.Class
+
+--8. Who (Name and MC code) manages the Movie category?
+use IFES52
+go
+SELECT  MS.Name,M.Membership_Code
+FROM  Manager M, Membership MS
+WHERE M.Cat_Code = 'MO'
+AND M.Membership_Code = MS.Membership_Code
+
+--9. Who (Name and MC code) has access to data about the Music category?
+use IFES52
+go
+SELECT MS.Name, MS.Membership_Code
+FROM Membership MS, Manager M
+WHERE MS.Membership_Code = M.Membership_Code
+AND M.Cat_Code = 'MU'
+
+--10. How many accesses are charged to each passenger (Name and MC code)?
+use IFES52
+go
+SELECT MS.Name, MS.Membership_Code, P.Num_Acc
+FROM  Passenger P, Membership MS
+WHERE P.Membership_Code = MS.Membership_Code
+
+11. List the accesses made by MC1014 in date order.
+use IFES52
+go
+SELECT A.Access_No, A.Access_Date, A.Work_No, A.Class
+FROM  Membership MS, Access A
+WHERE A.Membership_Code = MS.Membership_Code
+AND MS.Membership_Code = 'MC1014'
+ORDER BY A.Access_Date
+
+
+
+

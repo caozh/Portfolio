@@ -1,0 +1,15 @@
+Description:
+In-Flight Entertainment System (IFES) offers enjoyable entertainment during the airline flight. 
+There are many records are needed to be stored and operated in order to keep the system running. 
+
+To make sure the availability and consistency of the records, 5NF database design technique is used. 
+According to the data given, different relations are designed to reduce the redundancies. 
+
+Author:
+Zhihao Cao
+
+Last modified:
+12/8/2015
+
+Key words:
+Advanced database design, SQL, SQL Server Management Studio (SSMS)
