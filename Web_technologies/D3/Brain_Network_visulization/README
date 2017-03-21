@@ -1,0 +1,17 @@
+Subject:
+Brain Network Visualization
+
+Description:
+the subjective of this project is to provide a type of visualization of
+brain node connectivity between multiple subjects. The visualization will have to be clear to be
+able to identify each node and each individual subject. The proposed result will be coded in D3.
+
+Author:
+Zhihao Cao
+Sze Wei Chang
+
+Last modified:
+5/4/2016
+
+Demo:
+http://cs.iupui.edu/~caozh/CSCI_55200/Project/Three_AD.html

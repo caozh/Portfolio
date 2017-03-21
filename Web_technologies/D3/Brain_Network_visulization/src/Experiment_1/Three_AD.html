@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.link {
+    stroke: #ccc;
+    stroke-width: 1.5px;
+}
+line.link:hover {
+    stroke: #000;
+    stroke-width: 5px;
+}
+
+
+.node {
+  cursor: move;
+  fill: #ccc;
+  stroke: #696969;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  fill: #000;
+  stroke: #000;
+  pointer-events: none;
+  font: 10px sans-serif;
+}
+.node.fixed {
+  fill: #f00;
+}
+
+.node:hover circle {
+}
+
+.tooltip {
+    height: 100px;
+    width: 100px;
+    background-color: gray;
+}
+div {
+
+}
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script type="text/javascript" src="js/tooltip.js"></script>
+<script>
+
+//svg size	
+var width = 900,
+    height = 1000;
+
+//force parameters
+var charge = -100;    //default -30
+var linkDistance = 0; //default 20
+
+//deviation calculaton
+var graph1 = {};  //object from graph {x, y, name}
+var graph2 = {};
+var graph3 = {};
+
+var synCounter = 0;
+var stopReload = false;
+
+//localStorage.clear();
+if(typeof(Storage) !== "undefined") {
+    //fetch deviation values
+    //graph1
+    if (sessionStorage.getItem("graph1") === null) {
+        console.log("graph1 not found");
+    } else {
+        graph1 = JSON.parse(sessionStorage.graph1);
+        //console.log(graph1);
+    }
+    //graph2
+    if (sessionStorage.getItem("graph2") === null) {
+        console.log("graph2 not found");
+    } else {
+        graph2 = JSON.parse(sessionStorage.graph2);
+        //console.log(graph2);
+    }  
+    //graph3
+    if (sessionStorage.getItem("graph3") === null) {
+        console.log("graph3 not found");
+    } else {
+        graph3 = JSON.parse(sessionStorage.graph3);
+        //console.log(graph3);
+    }
+    //fetch stopReload value
+    if (sessionStorage.getItem("stopReload") === null) {
+        console.log("stopReload not found");
+    } else {
+        stopReload = JSON.parse(sessionStorage.stopReload);
+        console.log(stopReload);
+    };
+} else {
+    alert("Sorry! No Web Storage support");
+};
+
+//deviation calculaton
+//consider the situation that some graph with missing nodes
+var sdValues = [];
+var sdValues_min;
+var sdValues_max;
+if (stopReload){
+    var vectorXY_Arr = [];
+    var meanArr = [];
+    //mean calculation
+    for(var i = 0; i < 234; i++) {
+        var vectorX;
+        var vectorY;
+        var vectorXY = [];
+        var nodeName = i+1;
+        //find the node from the graph object
+        for (var key in graph1) {
+            if(graph1.hasOwnProperty(key)) {
+                if(graph1[key].name == nodeName) {
+                    //console.log("graph1[key].name: " + graph1[key].name+" ("+graph1[key].x+", "+graph1[key].y+")");
+                    vectorX = graph1[key].x;
+                    vectorY = graph1[key].y;
+                    vectorXY.push(Math.sqrt(Math.pow(vectorX, 2) + Math.pow(vectorY, 2)));
+                    //break;
+                }
+            }
+        }//graph1
+        
+        for (var key in graph2) {
+            if(graph2.hasOwnProperty(key)) {
+                if(graph2[key].name == nodeName){
+                    //console.log("graph2[key].name: " + graph2[key].name+" ("+graph2[key].x+", "+graph2[key].y+")");
+                    vectorX = graph2[key].x;
+                    vectorY = graph2[key].y;
+                    vectorXY.push(Math.sqrt(Math.pow(vectorX, 2) + Math.pow(vectorY, 2)));
+                    //break;
+                }
+            }
+        }//graph2
+        
+        for (var key in graph3) {
+            if(graph3.hasOwnProperty(key)) {
+                if(graph3[key].name == nodeName){
+                    //console.log("graph3[key].name: " + graph3[key].name+" ("+graph3[key].x+", "+graph3[key].y+")");
+                    vectorX = graph3[key].x;
+                    vectorY = graph3[key].y;
+                    vectorXY.push(Math.sqrt(Math.pow(vectorX, 2) + Math.pow(vectorY, 2)));
+                    //break;
+                }
+            }
+        }//graph3
+        
+        vectorXY_Arr.push(vectorXY);
+        var findMean = d3.mean(vectorXY);
+        meanArr.push(findMean);
+        //console.log("Name: "+(i+1)+" Mean: " + findMean);
+        
+    }; //end mean calculation for loop
+    
+    
+    //deviation calculation
+    for(var i = 0; i < vectorXY_Arr.length; i++) {
+        var sum = [];
+        for (var j = 0; j < vectorXY_Arr[0].length; j++) {
+            sum.push(Math.pow(vectorXY_Arr[i][j] - meanArr[i], 2)); //vectorXY_Arr.length == meanArr.length
+            //console.log("sum["+j+"]: "+sum);   
+        };
+         
+        var result = Math.sqrt(d3.mean(sum));
+        sdValues.push(result);       
+        //console.log("sdValues["+i+"]: "+result);   //check 
+    }; 
+    sdValues_min = d3.min(sdValues);
+    sdValues_max = d3.max(sdValues);
+    console.log("Min: " + sdValues_min+" Max: "+sdValues_max);
+}
+
+//showing node information
+var Nodetooltip = d3.select("body")
+    .append("div")
+    .style("position", "absolute")
+    .style("z-index", "10")
+    .style({ "visibility"    : "hidden",
+            "stroke"        : "#000", 
+            "display"       : 'inline-block',
+            "width"         : '110px',
+            "height"        : '50px', 
+            "stroke-width"  : "0.5",
+            "background-color": 'rgba(255, 204, 204, 0.8)',
+            'opacity'       : 0.8,
+            'border-radius' : '5px',
+            'padding'       : '10px',
+            '-webkit-box-shadow': '0px 0px 16px 1px rgba(0,0,0,0.37)',
+            '-moz-box-shadow': '0px 0px 16px 1px rgba(0,0,0,0.37)',
+            'box-shadow'    : '0px 0px 16px 1px rgba(0,0,0,0.37)'
+    });
+
+//load file
+//considering the performance issue of drawing force layout, only three matrices of each csv file are loaded. (it's still capable to load all matrices)
+
+var a = 0; //use to avoid symmetric problem
+//force layout links
+var links1 = {},  links2 = {},  links3 = {}; 
+//link counter
+var linkNum1 = 0, linkNum2 = 0, linkNum3 = 0;   
+    
+d3.text("Three_AD.csv", function(text) {      //d3.text("HC_One.csv", function(text) {
+    //convert to numbers
+    var data = d3.csv.parseRows(text).map(function(row) {
+        return row.map(function(value) {
+            return +value;
+        });
+    });
+
+    var hash_LookUp1 = {}; //create index for node
+    var hash_LookUp2 = {}; 
+    var hash_LookUp3 = {}; 
+    
+    var valueArr1 = new Array(); //for link value normalization
+    var valueArr2 = new Array();
+    var valueArr3 = new Array();
+    
+    var dataRows = data.length;     //save the rows of the matrix
+    var dataCols = data[0].length; 
+    
+    var linkedByIndex1 = {};      //for mouse effects
+    var linkedByIndex2 = {}; 
+    var linkedByIndex3 = {}; 
+    
+    console.log("Three_AD.csv, Rows: " + dataRows + ", Cols: " + dataCols); //check
+    
+    for (r = 0; r < dataRows; r++){ // row loop
+        //load graphs separatly by counting the row number of the csv file
+        var graph_index = Math.ceil((r+1)/234);
+        //reset "a" when jumping to next graph
+        if (a%234 == 0) a = 0;
+            //load graph data one by one
+            switch(graph_index){
+                case 1:
+                    for(c = a; c < dataCols; c++){   //column loop
+                        if (data[r][c] != 0) {         //only keep the weighted links
+                            //console.log(data[r][c]);
+                            //create a link object
+                            links1[linkNum1.toString()] = {source: (r+1).toString(), target: (c+1).toString(), value: data[r][c]}; 
+                            valueArr1.push(data[r][c]); //save the value to an array for normalization
+                            //mouse move effect
+                            linkedByIndex1[(r+1).toString() + "," + (c+1).toString()] = 1;
+                            //apply hash look up
+                            links1[linkNum1.toString()].source = myHash(hash_LookUp1, links1[linkNum1.toString()].source, sdValues[r]); //sdValues
+                            links1[linkNum1.toString()].target = myHash(hash_LookUp1, links1[linkNum1.toString()].target, sdValues[c]); //sdValues
+                            //console.log("Source: " + (r+1).toString() +", Target: " + (c+1).toString() + ", Value: " + data[r][c]);
+                            //console.log("linkNum: " + linkNum);
+                            //increment link number
+                            linkNum1++; 
+                        }
+                    }
+                    a++; //avoid symmetric links 
+                    break;
+                
+                case 2:
+                    for(c = a; c < dataCols; c++){   //column loop
+                        //reset the row number respecting to the graph
+                        var r_graph = (r+1)%234 + 1;
+                        if (data[r][c] != 0) {         //only keep the weighted links
+                            //console.log(data[r][c]);
+                            //create a link object
+                            links2[linkNum2.toString()] = {source: (r_graph).toString(), target: (c+1).toString(), value: data[r][c]}; 
+                            valueArr2.push(data[r][c]); //save the value to an array for normalization
+                            //mouse move effect
+                            linkedByIndex2[(r_graph).toString() + "," + (c+1).toString()] = 1;
+                            //apply hash look up
+                            links2[linkNum2.toString()].source = myHash(hash_LookUp2, links2[linkNum2.toString()].source, sdValues[r_graph-1]); 
+                            links2[linkNum2.toString()].target = myHash(hash_LookUp2, links2[linkNum2.toString()].target, sdValues[c]);
+                            //increment link number
+                            linkNum2++; 
+                        }
+                    }
+                    a++; //avoid symmetric links 
+                    break;
+                
+                case 3:      
+                    for(c = a; c < dataCols; c++){   //column loop
+                        //reset the row number respecting to the graph
+                        var r_graph = (r+1)%234 + 1;
+                        if (data[r][c] != 0) {         //only keep the weighted links
+                            //console.log(data[r][c]);
+                            //create a link object
+                            links3[linkNum3.toString()] = {source: (r_graph).toString(), target: (c+1).toString(), value: data[r][c]}; 
+                            valueArr3.push(data[r][c]); //save the value to an array for normalization
+                            //mouse move effect
+                            linkedByIndex3[(r_graph).toString() + "," + (c+1).toString()] = 1;
+                            //apply hash look up
+                            links3[linkNum3.toString()].source = myHash(hash_LookUp3, links3[linkNum3.toString()].source, sdValues[r_graph-1]); 
+                            links3[linkNum3.toString()].target = myHash(hash_LookUp3, links3[linkNum3.toString()].target, sdValues[c]);
+                            //increment link number
+                            linkNum3++; 
+                        }
+                    }
+                    a++; //avoid symmetric links 
+                    break;
+                    
+                default:
+                    //console.log("No more graph data to load!");
+            }
+        //console.log("graph_index: "+graph_index + " a: "+(a-1));  //check
+    }
+    
+    // apply hash look up to create index for each node
+    function myHash(hash_LookUp, name, sd){ 
+        return hash_LookUp[name] ? hash_LookUp[name] : hash_LookUp[name] = {name: name, sd: sd};
+    }
+ 
+    //console.log(hash_LookUp3);      //check objects
+    //console.log(links3);
+    
+    //call layout() to draw graph
+    function layout(input_hash_LookUp, input_links, valueArr, linkedByIndex) {
+        //declare new svg 
+        var svg = d3.select("body").append("svg")
+            .attr("width", width)
+            .attr("height", height);  
+            
+        //declare new force 
+        var force = d3.layout.force()
+            .linkDistance(linkDistance)
+            .charge(charge)
+            .size([width, height]);
+            
+        //declare new nodes and links objects 
+        var nodes = d3.values(input_hash_LookUp); //convert to force function's parameter object
+        var links = d3.values(input_links);  
+        
+        //set the initial position 
+        initPosition(nodes);
+        
+        function initPosition(nodes) {
+            for (var i=0; i<nodes.length; i++) {
+                var nodeName = i + 1 ;
+                if (nodeName > 15) {                           //15 nodes each row
+                    var row = Math.ceil(nodeName/15);  //get row number
+                    
+                    //new line, adjust the iterator
+                    var col = nodeName % 15;
+                    if (col == 0) 
+                        col = 14;
+                    else if (col == 1) 
+                        col = 0;        
+                    else 
+                        col--;
+                    
+                    //new line position
+                    nodes[i].x = col*40+100;      
+                    nodes[i].y = row*40+100;
+                    
+                } else {
+                    nodes[i].x = i*40+100; 
+                    nodes[i].y = 140;
+                }
+                //console.log("node["+i+"]: "+nodes[i].x+","+nodes[i].y);
+            }
+        }   
+        
+        //for value normalization
+        var maxValue = Math.max.apply(Math, valueArr);
+
+        //set the link weight
+        force.linkStrength(function(d) {
+            return d.value / maxValue;
+        });
+    
+        //create the link lines.
+        var link = svg.selectAll(".link")
+            .data(links).enter()
+            .append("line")
+            .attr("class", "link");
+            
+        //create the node circles.
+        var node = svg.selectAll(".node")
+            .data(nodes).enter()
+            .append("g")
+            .attr("class", "node")
+            .on("mouseover", function(d,i) {
+                Nodetooltip.html(nodeBar(d))
+                    .attr("dx", 20)
+                    .attr("dy", "3.35em"); 
+                //enlarge the node
+                d3.select(this).select("circle").transition()
+                    .duration(350)
+                    .attr("r", 16);
+            })
+            .on("mouseout", function (d,i) {
+                d3.select(this).select("circle").transition()
+                    .duration(750)
+                    .attr("r", 8);
+            }); 
+        
+        //nodeBar
+        function nodeBar(d) {
+            var myTxt="Connections: " + d.weight + "<br \>SD: " + Math.round(d.sd * 100) / 100+ "<br \> [5, 214] ";
+            return myTxt;
+        }
+        var outerScale = d3.scale.linear()
+            .domain([sdValues_min,sdValues_max])
+            .range([0,1]);
+            
+        //assign the color value baseed on heat-map 
+        var heatmapColor = d3.scale.linear()
+            .clamp(true)
+            .domain([0, 0.1111111111111111, 0.2222222222222222, 0.3333333333333333, 0.4444444444444444, 
+                     0.5555555555555555, 0.6666666666666666, 0.7777777777777777, 0.8888888888888888, 1])
+            .range(['#ffffff','#fff7f3','#fde0dd','#fcc5c0','#fa9fb5',
+              '#f768a1','#dd3497','#ae017e','#7a0177','#49006a']);
+ 
+        //create circle
+        node.append("circle")
+            .attr("r", 8)
+            .attr("class", "node")
+            .style("fill", function(d) {return heatmapColor(outerScale(d.sd)); })
+            .on("mouseover", tooltipOver(.2))
+            .on("mousemove", tooltipMove)
+            .on("mouseout", tooltipOut(1));
+
+            
+        function isConnected(a, b) {
+            return linkedByIndex[a.name + "," + b.name] || linkedByIndex[b.name + "," + a.name] || a.index == b.index; // 
+        }
+        
+        function tooltipOver(opacity) {
+            return function(d) {
+                node.style("stroke-opacity", function(o) {
+                    thisOpacity = isConnected(d, o) ? 1 : opacity;
+                    this.setAttribute('fill-opacity', thisOpacity);
+                    this.setAttribute('stroke', '#000');
+                    return thisOpacity;
+                });
+
+                link.style("stroke-opacity", function(o) {
+                    return o.source === d || o.target === d ? 1 : opacity;
+                }).style("stroke", function(o) {
+                    return o.source === d || o.target === d ? '#000' : '#ccc';
+                });
+                Nodetooltip.style("visibility", "visible");
+            };
+            
+        }	
+        function tooltipMove() {
+            return Nodetooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");
+        }
+        function tooltipOut(opacity) {
+            return function(d) {
+                node.style("stroke-opacity", function(o) {
+                    thisOpacity = isConnected(d, o) ? 1 : opacity;
+                    this.setAttribute('fill-opacity', thisOpacity);
+                    return thisOpacity;
+                });
+
+                link.style("stroke-opacity", function(o) {
+                    return o.source === d || o.target === d ? 1 : opacity;
+                }).style("stroke", '#ccc').classed(".link:hover", true);
+                Nodetooltip.style("visibility", "hidden");
+            };
+        }
+            
+        //create text
+        node.append("text")
+            .attr("fill","#000")
+            .style("stroke-width","1px")
+            .attr("dx", 12)
+            .attr("dy", ".35em")
+            .text(function(d) { return d.name; });  
+            
+        //draw the force layout    
+        force
+            .nodes(nodes)
+            .links(links)   
+            .on("tick", tick)
+            .on('end', end)
+            .start();
+            
+        //force.start();
+        //for (var i = 10000; i > 0; --i) force.tick();
+        //force.stop();
+        
+        //set the link position
+        function tick() {
+            link.attr("x1", function(d) { return d.source.x; })
+                .attr("y1", function(d) { return d.source.y; })
+                .attr("x2", function(d) { return d.target.x; })
+                .attr("y2", function(d) { return d.target.y; });
+
+            node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+        };
+        
+        //read node's final position
+        function end() {
+            if (!stopReload) {
+                synCounter++;
+                console.log("synCounter: " + synCounter);
+                switch(synCounter) {
+                    case 1: //graph 1
+                        for (var i = 0; i < nodes.length; i++){
+                            console.log("nodes["+i+"]: "+nodes[i].x+","+nodes[i].y + " name: "+ nodes[i].name);
+                            graph1[i.toString()] = {x: nodes[i].x, y: nodes[i].y, name: nodes[i].name}; 
+                        };
+                        //apply session storage to browser
+                        console.log(graph1);
+                        console.log("graph1 storage");
+                        sessionStorage.graph1 = JSON.stringify(graph1);
+                        
+                        break;
+                        
+                    case 2: //graph 2
+                        for (var i = 0; i < nodes.length; i++){
+                            graph2[i.toString()] = {x: nodes[i].x, y: nodes[i].y, name: nodes[i].name}; 
+                        };
+                        //apply session storage to browser
+                        console.log("graph2 storage");
+                        sessionStorage.graph2 = JSON.stringify(graph2);
+                        
+                        break;
+                     
+                    case 3: //graph 3
+                        for (var i = 0; i < nodes.length; i++){
+                            graph3[i.toString()] = {x: nodes[i].x, y: nodes[i].y, name: nodes[i].name}; 
+                        };
+                        //apply session storage to browser
+                        sessionStorage.graph3 = JSON.stringify(graph3);
+                        console.log("graph3 storage");
+                        break;
+                    default:
+                        console.log("exceed synCounter!");
+                }
+            } 
+            //refresh the page to load up the deviation values
+            //need synchronize with other graph
+            //otherwise deviation values of some graphs may loss
+            if (synCounter == 3 && !stopReload) { //set the number of layout() calls
+                //finish synchronizeing, reload page
+                location.reload();
+                //save stopReload to sessionStorage
+                stopReload = true;
+                sessionStorage.stopReload = JSON.stringify(stopReload);
+              
+            } else if (stopReload) {  
+                //drop sessionStorage items
+                console.log("drop sessionStorage items");     
+                delete sessionStorage.stopReload;
+                delete sessionStorage.graph1;
+                delete sessionStorage.graph2;
+                delete sessionStorage.graph3;
+            };
+        };
+    }; //end layout    
+
+    
+    //draw the layouts
+    layout(hash_LookUp1, links1, valueArr1, linkedByIndex1);
+    layout(hash_LookUp2, links2, valueArr2, linkedByIndex2);
+    layout(hash_LookUp3, links3, valueArr3, linkedByIndex3);
+    
+}); //end d3.text();
+    
+    
+    
+//read second file...    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//////////////////////////////////////////////////////////////
+//old part(does not call)/////////////////////////////////////
+////////////////////////////////////////////////////////////// 
+var nodeX2= new Array();
+var nodeY2= new Array();
+var dev=0;
+var devX;
+var devY;
+var devsqrt;
+
+//Layout 2
+function layout2() {  
+    var svg = d3.select("body").append("svg")
+        .attr("width", width)
+        .attr("height", height);  
+    
+    var force = d3.layout.force()
+        .linkDistance(linkDistance)
+        .charge(charge)
+        .size([width, height]);    
+        
+    //Load file
+    var a = 0; //use to avoid symmetric problem
+    var links = {}; //link object
+
+    var linkNum = 0;   
+        
+    //d3.text("AD_One.csv", function(text) {
+    d3.text("HC2.csv", function(text) {
+        //convert to numbers
+        var data = d3.csv.parseRows(text).map(function(row) {
+            return row.map(function(value) {
+                return +value;
+            });
+        });
+
+        var hash_LookUp = {}; //create index for node
+        
+        var dataLength = data.length;     //save the rows of the matrix
+        var dataLength2 = data[0].length; //save the cols of the matrix
+        
+        //console.log("Rows: " + dataLength + ", Cols: " + dataLength2); //check
+        
+        for (r = 0; r < dataLength; r++){ // row loop
+            for(c = a; c < dataLength; c++){   //column loop
+                if (data[r][c] != 0) {         //only keep the weighted links
+                    //console.log(data[r][c]);
+                    //create a link object
+                    links[linkNum.toString()] = {source: (r+1).toString(), target: (c+1).toString(), value: data[r][c]}; //I commented the "value" at this moment
+                    
+                    links[linkNum.toString()].source = myHash(links[linkNum.toString()].source); //apply hash look up
+                    links[linkNum.toString()].target = myHash(links[linkNum.toString()].target);
+                    
+                    //console.log("Source: " + (r+1).toString() +", Target: " + (c+1).toString() + ", Value: " + data[r][c]);
+                    //console.log("linkNum: " + linkNum);
+                    linkNum++; //link number
+                    
+                }
+                
+                  
+            }
+            a++; //avoid symmetric links
+        }
+        
+        
+        function myHash(name){ // apply hash look up to create index for each node
+            return hash_LookUp[name] ? hash_LookUp[name] : hash_LookUp[name] = {name: name};
+        }
+        
+
+        //console.log(hash_LookUp);  //check objects
+        //console.log(links);
+
+        var nodes = d3.values(hash_LookUp); //convert to force function's parameter object
+        links = d3.values(links);  
+
+        //set the initial position 
+        for (i=0; i<nodes.length; i++) {
+            var myIdx = i + 1 ;
+            if (myIdx > 15) {                           //15 nodes each row
+                var row = Math.ceil(myIdx/15);
+                var col = myIdx % 15;
+                
+                if (col == 1) col = 0;
+                nodes[i].x = col*40+100;
+                nodes[i].y = row*40+100;
+                
+            } else {
+                nodes[i].x = i*40+100; 
+                nodes[i].y = 140;
+            }
+        }
+        
+        //set the link weight
+        force.linkStrength(function(d) {
+            return d.value;
+        });
+        
+        // Create the link lines.
+        var link = svg.selectAll(".link")
+            .data(links).enter()
+            .append("line")
+            .attr("class", "link");
+            
+        // Create the node circles.
+        var node = svg.selectAll(".node")
+            .data(nodes).enter()
+            .append("g")
+            .attr("class", "node");
+            
+        node.append("circle")
+            .attr("r", 4)
+            .attr("class", "node");
+            
+        node.append("text")
+            .attr("fill","#000")
+            .style("stroke-width","1px")
+            .attr("dx", 12)
+            .attr("dy", ".35em")
+            .text(function(d) { return d.name; });  
+            
+        //draw the force layout    
+        force
+            .nodes(nodes)
+            .links(links)    
+            .on("tick", tick)
+            .on('end', end)
+            .start();
+        
+        //read node's final position
+        function end() {
+            for (i = 0; i < nodes.length; i++){
+                //console.log("nodes["+i+"]: "+nodes[i].x+","+nodes[i].y);
+				nodeX2.push(nodes[i].x);
+				nodeY2.push(nodes[i].y);
+            }   
+			deviation();
+        }
+		
+		function deviation(){
+            for (i = 0; i < nodeX1.length; i++){
+				console.log("deviation:NodeX1["+i+"]"+nodeX1[i]+",NodeY1["+i+"]"+nodeY1[i]+",NodeX2["+i+"]"+nodeX2[i]+",NodeY2["+i+"]"+nodeY2[i]);
+				devX=Math.pow((nodeX1[i]-nodeX2[i]),2);
+				devY=Math.pow((nodeY1[i]-nodeY2[i]),2);
+				console.log("deviation:devX:"+devX+",devY:"+devY);
+				if(isNaN(devX))
+				{
+					devsqrt= Math.sqrt(0+devY);
+				}
+				
+				else if (isNaN(devY))
+				{
+					devsqrt= Math.sqrt(devX+0);
+				}
+				else
+				{
+					devsqrt= Math.sqrt(devX+devY);
+				}
+				console.log("deviation:devsqrt:"+devsqrt);
+				dev=dev+devsqrt;
+            }  
+		console.log("deviation:Total dev:"+dev);
+		}
+        
+        //set the link position
+        function tick() {
+            link.attr("x1", function(d) { return d.source.x; })
+                .attr("y1", function(d) { return d.source.y; })
+                .attr("x2", function(d) { return d.target.x; })
+                .attr("y2", function(d) { return d.target.y; });
+			
+            //maybe here is why the node's position is randomly assigned
+            node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+        }             
+    });
+}
+
+
+     
+//layout2();
+       
+</script>
+    
+    
+    
+    
+    
+    
+    
