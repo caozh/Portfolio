@@ -9,7 +9,7 @@ I'm availaboe for hire as a software engineer. I can be reached out at josephzel
 ## Java
 * [Edge and line detection](https://github.com/caozh/Portfolio/tree/master/Java/Edge_and_line_detection)
 	* [Report](https://github.com/caozh/Portfolio/blob/master/Java/Edge_and_line_detection/Report.pdf)
-* [Image manipulation] (https://github.com/caozh/Portfolio/tree/master/Java/Image_manipulation)
+* [Image manipulation](https://github.com/caozh/Portfolio/tree/master/Java/Image_manipulation)
 	* [Report](https://github.com/caozh/Portfolio/blob/master/Java/Image_manipulation/Report.pdf)
 * [Online Marketplace](https://github.com/caozh/Portfolio/tree/master/Java/Online_Marketplace)
 	* [Design](https://github.com/caozh/Portfolio/blob/master/Java/Online_Marketplace/Diagrams/Authorization_pattern_UML.PNG)
