@@ -57,7 +57,7 @@ I'm availaboe for hire as a software engineer. I can be reached out at josephzel
 
 # Papers
 * [Against DDoS Attacks Using SDN - A Survey](https://github.com/caozh/Portfolio/blob/master/Papers/Against_DDoS_Attacks_Using_SDN_A_Survey.pdf)
-* [The Internet of Things - A survey on technologies and protocols](https://github.com/caozh/Portfolio/blob/master/Papers/The_Internet_of_Things_A_survey_on_technologies_and%20_protocols.pdf)
+* [The Internet of Things - A survey on technologies and protocols](https://github.com/caozh/Portfolio/blob/master/Papers/The_Internet_of_Things_A_survey_on_technologies_and_protocols.pdf)
 * [Study of HTTP Authentications](https://github.com/caozh/Portfolio/blob/master/Papers/Study_of_HTTP_Authentications.pdf)
 
 
