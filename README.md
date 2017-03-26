@@ -41,6 +41,9 @@ I'm availaboe for hire as a software engineer. I can be reached out at josephzel
 	* [Documentation](https://github.com/caozh/Portfolio/blob/master/Python/Defense_Homeland/Documentation.pdf)
 * [Transport Layer Protocol](https://github.com/caozh/Portfolio/tree/master/Python/Transport_Layer_Protocol)
 
+# C
+* [Compiler](https://github.com/caozh/Portfolio/tree/master/C/Compiler)
+
 ## Web Technologies
 * [D3](https://github.com/caozh/Portfolio/tree/master/Web_technologies/D3)
 	* [Brain Network Visulization](https://github.com/caozh/Portfolio/tree/master/Web_technologies/D3/Brain_Network_visulization)
@@ -53,9 +56,6 @@ I'm availaboe for hire as a software engineer. I can be reached out at josephzel
 	* [Five In A Row](https://github.com/caozh/Portfolio/tree/master/Web_technologies/Javascript/Five_in_a_row)
 * [HTML5](https://github.com/caozh/Portfolio/tree/master/Web_technologies/HTML5)
 * [ActionScript](https://github.com/caozh/Portfolio/tree/master/Web_technologies/ActionScript)
-
-# C
-* [Compiler](https://github.com/caozh/Portfolio/tree/master/C/Compiler)
 
 # Papers
 * [Against DDoS Attacks Using SDN - A Survey](https://github.com/caozh/Portfolio/blob/master/Papers/Against_DDoS_Attacks_Using_SDN_A_Survey.pdf)
