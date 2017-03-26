@@ -17,7 +17,6 @@ I'm availaboe for hire as a software engineer. I can be reached out at josephzel
 ## C++
 * [Augmented Reality](https://github.com/caozh/Portfolio/tree/master/Cpp/Augmented_Reality)
 	* [Presentation](https://github.com/caozh/Portfolio/blob/master/Cpp/Augmented_Reality/Presentation_Augmented_Reality.pdf)
-
 * [Edge Detection](https://github.com/caozh/Portfolio/tree/master/Cpp/Edge_detection)
 	*[Report](http://cs.iupui.edu/~caozh/CSCI_43500/edge_detection/edge_dection.html)
 * [Image Filtering](https://github.com/caozh/Portfolio/tree/master/Cpp/Image_filtering)
