@@ -21,6 +21,12 @@ I'm availaboe for hire as a software engineer. I can be reached out at josephzel
 	* [Report](http://cs.iupui.edu/~caozh/CSCI_43500/edge_detection/edge_dection.html)
 * [Image Filtering](https://github.com/caozh/Portfolio/tree/master/Cpp/Image_filtering)
 	* [Report](http://cs.iupui.edu/~caozh/CSCI_43500/filter/filter.html)
+* [Algorithm Studies](https://github.com/caozh/Portfolio/tree/master/Cpp/Algorithm_studies)
+	* [Algorithms Running Time Analysis](https://github.com/caozh/Portfolio/tree/master/Cpp/Algorithm_studies/Algorithms_running_time_analysis)
+	* [ColumnSort vs QuickSort](https://github.com/caozh/Portfolio/tree/master/Cpp/Algorithm_studies/ColumnSort_VS_QuickSort)
+	* [Huffman Encoding](https://github.com/caozh/Portfolio/tree/master/Cpp/Algorithm_studies/Huffman_encoding)
+	* [Knights Tour](https://github.com/caozh/Portfolio/tree/master/Cpp/Algorithm_studies/Knights_tour)
+	* [Find Peak](https://github.com/caozh/Portfolio/tree/master/Cpp/Algorithm_studies/Find_peak)
 
 ## PHP
 * [Online Shopping System](https://github.com/caozh/Portfolio/tree/master/PHP/Online_shopping_system)
