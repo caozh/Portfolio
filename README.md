@@ -1,7 +1,6 @@
 # Portfolio
 I'm available for hire as a software engineer. I can be reached out at cao104@purdue.edu
-* [Resume](https://github.com/caozh/Portfolio/blob/master/Resume.pdf)
-* [LinkedIn](https://www.linkedin.com/in/zhihao-cao-7b6133a3/)
+
  
 ## Java
 * [Edge and Line Detection](https://github.com/caozh/Portfolio/tree/master/Java/Edge_and_line_detection)
