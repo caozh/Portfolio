@@ -19,7 +19,8 @@ An online B2C shopping platform, applying **Object-Orient Software Design** and 
 
 ## C++
 * [Augmented Reality](https://github.com/caozh/Portfolio/tree/master/Cpp/Augmented_Reality) <br />
-<a href="https://youtu.be/nkjL9Scrxo8" target="_blank"><img src="Cpp/Augmented_Reality/images/a.png" height="180"></img></a> Displaying the combining view of **computer-generated input** (xyz axis bars) overlaying the **reality view from camera**.
+<a href="https://youtu.be/nkjL9Scrxo8" target="_blank"><img src="Cpp/Augmented_Reality/images/a.png" height="180"></img></a> 
+Displaying the combining view of **computer-generated input** (xyz axis bars) overlaying the **reality view from camera**.
 	* [Presentation](https://github.com/caozh/Portfolio/blob/master/Cpp/Augmented_Reality/Presentation_Augmented_Reality.pdf)
 * [Edge Detection](https://github.com/caozh/Portfolio/tree/master/Cpp/Edge_detection) <br />
 <a href="http://cs.iupui.edu/~caozh/CSCI_43500/edge_detection/edge_dection.html"><img src="Cpp/Edge_detection/images/a.png" height="180"></img></a>
@@ -38,9 +39,9 @@ An online B2C shopping platform, applying **Object-Orient Software Design** and 
 
 ## Database
 * [In-Flight Entertainment System](https://github.com/caozh/Portfolio/tree/master/Database/In-Flight_Entertainment_System) <br />
-In-Flight Entertainment System (IFES) offers enjoyable entertainment during the airline flight. There are many records are needed to be stored and operated in order to keep the system running. 
-It is a BCNF database system under Microsoft SQL Server (SSMS)
-SQL functions are predefined to serve multiple use-cases of the Entertainment System 
+IFES offers enjoyable entertainment during the airline flight. There are many records are needed to be stored and operated in order to keep the system running. 
+It is a **BCNF database system** under **Microsoft SQL Server (SSMS)**
+SQL functions are predefined to **serve multiple use-cases** of the Entertainment System 
 * [Apartment DB System](https://github.com/caozh/Portfolio/tree/master/Database/Apartment_DB_System)
 
 ## Python
