@@ -33,8 +33,8 @@ An online B2C shopping platform, applying **Object-Orient Software Design** and 
 	* [Find Peak](https://github.com/caozh/Portfolio/tree/master/Cpp/Algorithm_studies/Find_peak)
 
 ## PHP
-* [Online Shopping System](https://github.com/caozh/Portfolio/tree/master/PHP/Online_shopping_system)
-	* [Demo](http://cs.iupui.edu/~caozh/CSCI_45200/project/Fangbing/)	
+* [Online Shopping System](https://github.com/caozh/Portfolio/tree/master/PHP/Online_shopping_system) <br />
+<a href="http://cs.iupui.edu/~caozh/CSCI_45200/project/Fangbing/"><img src="PHP/Online_shopping_system/images/a.png" height="180"></img></a>
 
 ## Database
 * [In-Flight Entertainment System](https://github.com/caozh/Portfolio/tree/master/Database/In-Flight_Entertainment_System)
