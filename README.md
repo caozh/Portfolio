@@ -23,9 +23,8 @@ An online B2C shopping platform, applying **Object-Orient Software Design** and 
 	* [Presentation](https://github.com/caozh/Portfolio/blob/master/Cpp/Augmented_Reality/Presentation_Augmented_Reality.pdf)
 * [Edge Detection](https://github.com/caozh/Portfolio/tree/master/Cpp/Edge_detection) <br />
 <a href="http://cs.iupui.edu/~caozh/CSCI_43500/edge_detection/edge_dection.html"><img src="Cpp/Edge_detection/images/a.png" height="180"></img></a>
-	* [Report](http://cs.iupui.edu/~caozh/CSCI_43500/edge_detection/edge_dection.html)
-* [Image Filtering](https://github.com/caozh/Portfolio/tree/master/Cpp/Image_filtering)
-	* [Report](http://cs.iupui.edu/~caozh/CSCI_43500/filter/filter.html)
+* [Image Filtering](https://github.com/caozh/Portfolio/tree/master/Cpp/Image_filtering) <br />
+<a href="http://cs.iupui.edu/~caozh/CSCI_43500/filter/filter.html"><img src="Cpp/Image_filtering/images/a.png" height="180"></img></a>
 * [Algorithm Studies](https://github.com/caozh/Portfolio/tree/master/Cpp/Algorithm_studies)
 	* [Algorithms Running Time Analysis](https://github.com/caozh/Portfolio/tree/master/Cpp/Algorithm_studies/Algorithms_running_time_analysis)
 	* [ColumnSort vs QuickSort](https://github.com/caozh/Portfolio/tree/master/Cpp/Algorithm_studies/ColumnSort_VS_QuickSort)
