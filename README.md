@@ -25,7 +25,7 @@ Implementing some **Image Point Transformations** and **Spatial Filtering Operat
 ## C++
 * [Augmented Reality](https://github.com/caozh/Portfolio/tree/master/Cpp/Augmented_Reality) <br />
 <a href="https://youtu.be/nkjL9Scrxo8" target="_blank"><img src="Cpp/Augmented_Reality/images/a.png" height="180"></img></a> 
-This project utilize the OpenCV lib to display the combining view of **computer-generated input** (xyz axis bars) overlaying the **reality view from camera**. 
+This project utilized the **OpenCV** library to display the combining view of **computer-generated input** (xyz axis bars) overlaying the **reality view from camera**. 
 It is done by **recognizing predefined markers** and **tracking them in real-time**, meanwhile attaching xyz axis bars to show the directions. (With OpenGL lib, More complex 3D model can be used)
 	* [Presentation](https://github.com/caozh/Portfolio/blob/master/Cpp/Augmented_Reality/Presentation_Augmented_Reality.pdf)
 * [Edge Detection](https://github.com/caozh/Portfolio/tree/master/Cpp/Edge_detection) <br />
