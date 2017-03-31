@@ -7,13 +7,18 @@ I'm available for hire as a software engineer. I can be reached out at cao104@pu
 An online B2C shopping platform, applying **Object-Orient Software Design** and **Software Design Patterns** and frameworks for **Distributed Computing**.	
 	* [Design](https://github.com/caozh/Portfolio/blob/master/Java/Online_Marketplace/Diagrams/Authorization_pattern_UML.PNG)
 * [Wireless Sensor Network Code Disseminator](https://github.com/caozh/Portfolio/tree/master/Java/UI_and_DB_design) <br />
-<a href="https://github.com/caozh/Portfolio/tree/master/Java/UI_and_DB_design"><img src="Java/UI_and_DB_design/images/a.png" height="180"></img></a> A front-end for a code disseminator (PhD. students’ research project) working in a wireless sensor network. It allows the sensors information and statuses be maintained efficiently by cooperating the **user-friendly front-end** and **dedicated database**.
+<a href="https://github.com/caozh/Portfolio/tree/master/Java/UI_and_DB_design"><img src="Java/UI_and_DB_design/images/a.png" height="180"></img></a> 
+A front-end for a code disseminator (PhD. students’ research project) working in a wireless sensor network. 
+It allows the sensors information and statuses be maintained efficiently by cooperating the **user-friendly front-end** and **dedicated database**.
 	* [Presentation](https://github.com/caozh/Portfolio/blob/master/Java/UI_and_DB_design/Demo.pdf)
 * [Edge and Line Detection](https://github.com/caozh/Portfolio/tree/master/Java/Edge_and_line_detection) <br />
-<a href="https://github.com/caozh/Portfolio/tree/master/Java/Edge_and_line_detection"><img src="Java/Edge_and_line_detection/images/a.png" height="180" ></img></a> Applying two mechanisms (**Canny Edge Detector** & **Hough Transform**) to detect low level image features (edges) and detect larger structures formed by these low level features (lines).
+<a href="https://github.com/caozh/Portfolio/tree/master/Java/Edge_and_line_detection"><img src="Java/Edge_and_line_detection/images/a.png" height="180" ></img></a> 
+Applying two mechanisms (**Canny Edge Detector** & **Hough Transform**) to detect low level image features (edges) and detect larger structures formed by these low level features (lines).
 	* [Report](https://github.com/caozh/Portfolio/blob/master/Java/Edge_and_line_detection/Report.pdf)
 * [Image Manipulation](https://github.com/caozh/Portfolio/tree/master/Java/Image_manipulation) <br />
-<a href="https://github.com/caozh/Portfolio/tree/master/Java/Image_manipulation"><img src="Java/Image_manipulation/images/a.png" height="180"></img></a> Implementing some **Image Point Transformations** and **Spatial Filtering Operations**: (Histogram Equialization, Logarithm mapping, Rotation, Gaussian filtering, and Median filtering)
+<a href="https://github.com/caozh/Portfolio/tree/master/Java/Image_manipulation"><img src="Java/Image_manipulation/images/a.png" height="180"></img></a> 
+Implementing some **Image Point Transformations** and **Spatial Filtering Operations**: 
+(Histogram Equialization, Logarithm mapping, Rotation, Gaussian filtering, and Median filtering)
 	* [Report](https://github.com/caozh/Portfolio/blob/master/Java/Image_manipulation/Report.pdf)
 * [Cryptography Studies](https://github.com/caozh/Portfolio/tree/master/Java/Cryptography_studies)
 
@@ -35,7 +40,9 @@ Displaying the combining view of **computer-generated input** (xyz axis bars) ov
 
 ## PHP
 * [Online Shopping System](https://github.com/caozh/Portfolio/tree/master/PHP/Online_shopping_system) <br />
-<a href="http://cs.iupui.edu/~caozh/CSCI_45200/project/Fangbing/"><img src="PHP/Online_shopping_system/images/a.png" height="180"></img></a> The online shopping system is a secure and reliable online platform for customer to customer (C2C) business. The system performs respective functionalities for **Administrator, Seller, and Customer** users. Product quantity management is implemented. 
+<a href="http://cs.iupui.edu/~caozh/CSCI_45200/project/Fangbing/"><img src="PHP/Online_shopping_system/images/a.png" height="180"></img></a> 
+The online shopping system is a secure and reliable online platform for customer to customer (C2C) business. 
+The system performs respective functionalities for **Administrator, Seller, and Customer** users. Product quantity management is implemented. 
 
 ## Database
 * [In-Flight Entertainment System](https://github.com/caozh/Portfolio/tree/master/Database/In-Flight_Entertainment_System) <br />
