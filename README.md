@@ -34,10 +34,13 @@ An online B2C shopping platform, applying **Object-Orient Software Design** and 
 
 ## PHP
 * [Online Shopping System](https://github.com/caozh/Portfolio/tree/master/PHP/Online_shopping_system) <br />
-<a href="http://cs.iupui.edu/~caozh/CSCI_45200/project/Fangbing/"><img src="PHP/Online_shopping_system/images/a.png" height="180"></img></a> The online shopping system is a secure and reliable online platform for customer to customer (C2C) business. The system offers different functionalities for **Administrator, Seller, and Customer** users. Product quantity management is implemented. 
+<a href="http://cs.iupui.edu/~caozh/CSCI_45200/project/Fangbing/"><img src="PHP/Online_shopping_system/images/a.png" height="180"></img></a> The online shopping system is a secure and reliable online platform for customer to customer (C2C) business. The system performs respective functionalities for **Administrator, Seller, and Customer** users. Product quantity management is implemented. 
 
 ## Database
-* [In-Flight Entertainment System](https://github.com/caozh/Portfolio/tree/master/Database/In-Flight_Entertainment_System)
+* [In-Flight Entertainment System](https://github.com/caozh/Portfolio/tree/master/Database/In-Flight_Entertainment_System) <br />
+In-Flight Entertainment System (IFES) offers enjoyable entertainment during the airline flight. There are many records are needed to be stored and operated in order to keep the system running. 
+It is a BCNF database system under Microsoft SQL Server (SSMS)
+SQL functions are predefined to serve multiple use-cases of the Entertainment System 
 * [Apartment DB System](https://github.com/caozh/Portfolio/tree/master/Database/Apartment_DB_System)
 
 ## Python
