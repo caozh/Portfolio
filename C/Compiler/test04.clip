@@ -1,0 +1,47 @@
+//Name:  Zhihao Cao 
+//CC:    04
+
+funct main() 
+{
+	int number, sum, ave, counter
+
+	sum = 0
+	counter = 0
+	while (1) do 
+	{
+		input number
+		if ((number-1)/100) then 
+		{
+			print "out range"
+		} 
+		else 
+		{
+			if ((number-100)/100) then
+			{
+				if (number) then
+				{
+					print "out range"
+				}
+				else 
+				{
+					print "stop reading"
+					ave = sum / counter
+					print "sum: ", sum
+					print "Average: ", ave
+					return 0
+				}
+				endif
+			}
+			else 
+			{
+				print number, " accepted"
+				sum = sum + number
+				counter = counter + 1
+			}
+			endif
+		}
+		endif
+	}
+	enddo
+	return 0
+}

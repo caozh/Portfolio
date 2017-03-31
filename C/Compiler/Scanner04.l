@@ -1,28 +1,15 @@
 /* 
+	Lex module
 	Name: Zhihao
 	NN: 04
 */
 
 %{
-	                /*Ddeclarations */
-#define FUNCT      300
-#define ID         301
-#define ASSGN      302
-#define INTEGER    303
-#define PRINT      304
-#define TEXT       305
-#define IF         306
-#define THEN       307
-#define ENDIF      308
-#define ELSE       309
-#define WHILE      310
-#define DO         311
-#define ENDDO      312
-#define INPUT      313
-#define RETURN     314
-#define INT        315
-#define END        316
-
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h> 
+#include "header04.h"
+#include "parser04.h"
 %}
 		/*regular expression definitions */				
 space            [ \t]
@@ -38,14 +25,12 @@ escaped_char     \\n
 text_string      ({ascii_char}|{escaped_char})* 
 text             \"{text_string}\"
 symbol           {letter}|{digit}|\_
-id               {letter}({symbol})*
-end_source_code  end
+identifier       {letter}({symbol})*
 
 %%                    
 			/* rules */
 {ws}                    {/* ignore */}
-{comment}               {/* ignore */}
-{end_source_code}       {return END;}             
+{comment}               {/* ignore */}         
 funct                   {return(FUNCT);}
 print                   {return(PRINT);}
 if                      {return(IF);}
@@ -57,74 +42,49 @@ do                      {return(DO);}
 enddo                   {return(ENDDO);}
 input                   {return(INPUT);}
 return                  {return(RETURN);}
+continue                {return(CONTINUE);}
 int                     {return(INT);}
-{text}                  {install('L'); return(TEXT);}
-{id}                    {install('I'); return(ID);}
+{text}                  {install('T'); return(TEXT);}
+{identifier}            {install('I'); return(IDENTIFIER);}
 {integer}               {install('N'); return(INTEGER);}
 "="                     {return(ASSGN);}
 .                       {return(yytext[0]);}
 
 %%                    
 
-//#include "SymTab04.c"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h> 
-
-#define MAX_SYM 200
-
-struct symTab            //declear the symbol table struct
-{	
-	char name[16];       //any ascii characters
-	char type;           //I->integer; S->string; 
-	char usage;          //I->identifier; L->literal; F->function;
-	int scope;           //[0-9]
-	int ref;             //default value: -1
-};
-
-typedef struct symTab symTab_type;   //define the struct type
-
 int counter;  	                     //indicate the newest entry in the symbol table
-int negOne = -1;                     //flag valriable: -1
-symTab_type mySymTab[MAX_SYM];       //create the symbol table globally
+int Null = -1;                       //flag valriable: -1   
 
 clear()                              //clear the symbol table
 {
-	counter = 0;
+	counter = Null;
 }
 
 init()                               //insert pre-load items
 {                            
-	create("FRED", 0, 'I', 'I'); 	
+	create("FRED", 0, 'I', 'U'); 	
 }
 
-int read(name, scope, type, usage)   //search the item from symbol table
-	char name[16], type, usage; int scope;
+int read(char name[16], int scope)   //search the item from symbol table
 {
 	int i;
 	for ( i = counter; i > 0; i-- )                 //search from backward
 	{
 		if( !strcmp( mySymTab[i].name, name ) )     //name 
 		{
-			if( mySymTab[i].type == type )          //type
+			if( mySymTab[i].scope == scope )        //scope
 			{
-				if( mySymTab[i].usage == usage )    //usage
-				{
-					if( mySymTab[i].scope == scope )//scope
-					{
-						return i;                   //found match from symbol table
-					}
-				}
+				return i;                           //found match from symbol table
 			}
 		}
 	}
-	return negOne;                                  //no match found
+	return Null;                                  //no match found
 }
 
 int create(name, scope, type, usage)                //insert item into symbol table
 	char name[16], type, usage; int scope;
 {
-	int ref = negOne;
+	int ref = Null;
 	if (type == 'I' && usage == 'L')
 	{
 		ref = atoi(name);
@@ -151,7 +111,7 @@ print_sym()                            //display all symbol table contents
 	printf("%*s", space, "Usage");
 	printf("%*s\n",13, "Reference");	
 	
-	for ( k = 1; k < counter + 1; k++ ) //diaplay all rows
+	for ( k = 0; k < counter+1 ; k++ ) //diaplay all rows
 	{
 		printf("%5d",k);
 		printf("%16s",mySymTab[k].name);
@@ -163,55 +123,36 @@ print_sym()                            //display all symbol table contents
 }
 
 install(arg)              //install lexeme into symbol table
-	char arg;             //represent the type of lexeme
+	char arg;
 {
-	int result; 
-	int negOne = -1; 
+	int index; 
 	char type, usage;
 	
 	if (arg == 'I')       //if the input lexeme is identifier
 	{
 		type = 'I';
-		usage = 'I';
+		usage = 'U';
 	}
-	else if (arg == 'L')  //if the input lexeme is literal
+	else if (arg == 'T')  //if the input lexeme is string literal
 	{
 		type = 'S';
 		usage = 'L';
 	}
-	else if (arg == 'N')  //if the input lexeme is number
+	else if (arg == 'N')  //if the input lexeme is numeric literal
 	{
 		type = 'I';
 		usage = 'L';
 	}
-	result = read(yytext, 0, type, usage);  
-	if( result == negOne )           //item not exist
-	{                                //insert item into symbol table
-		create(yytext, 0, type, usage); 
-	} else {                         //item exists
-		//printf( "This item already exists in symbol table row[%d]\n", result );
-	}
+	
+	index = read(yytext, 0);  
+	if( index == Null )           //item not exist
+	{                              //insert item into symbol table
+		index = create(yytext, scope_count, type, usage); 
+	} 
+	yylval.s_ref = index;
 }
 
-main()                /* main program */
-{
-	int i = 0;
-	
-	printf( "NN: 04, Name: Zhihao Cao, Assignment 04\n" );
-	
-	clear();
-	init();
-	print_sym();
-		
-	while(i != 316) {    //while end lexeme is not detected
-		i = yylex();
-		printf("%3d", i) ;
-		printf(" returned value: %s\n", yytext) ;
-	}
-	print_sym();
-	
-	printf("End of test.\n");
-}
+//main
 
 yywrap(){return (1);}
 

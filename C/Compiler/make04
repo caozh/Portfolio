@@ -1,0 +1,44 @@
+#
+# A Makefile for the simple CLIP compiler
+# Name: Zhihao Cao
+# NN: 04
+#
+
+.c.o:
+	gcc -c $(CFLAGS) $*.c
+# Flags
+CFLAGS = -g
+# The files involved
+HDRS = header04.h
+CSRCS = main04.c
+SRCS = $ (CSRCS) \
+scanner04.c \
+parser04.c \
+
+OBJS = main04.o \
+parser04.o \
+scanner04.o
+# Create a new compiler
+clip04: $(OBJS)
+	gcc $(CFLAGS) $(OBJS) -o clip04	
+	
+# Dependencies of LEX and YACC files
+scanner04.c: scanner04.l
+	flex scanner04.l
+	mv lex.yy.c scanner04.c
+scanner04.o: scanner04.c parser04.h
+
+parser04.c parser04.h: parser04.y
+	byacc -d -l -v parser04.y
+	mv y.tab.c parser04.c
+	mv y.tab.h parser04.h
+
+# C dependencies
+$(OBJS): $(HDRS)
+main04.o: parser04.h
+
+
+
+
+
+

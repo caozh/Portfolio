@@ -66,7 +66,7 @@ It is a reliable UDP protocol using a **Sliding Window model** (**Go-Back-N** me
 # C
 * [Compiler](https://github.com/caozh/Portfolio/tree/master/C/Compiler) <br />
 A compiler written in C with **Lex** and **Yacc** tools. This compiler is developed to translate CLIP (C like) language into target machine code. 
-The compiler contains five phases: **Lexical analysis, syntax analysis, semantic analysis, Intermediate code generation, and code generation**.
+The compiler contains five phases: **Lexical analysis, syntax analysis, semantic analysis, Intermediate code generation,** and **code generation**.
 
 ## Web Technologies
 * [D3](https://github.com/caozh/Portfolio/tree/master/Web_technologies/D3)
