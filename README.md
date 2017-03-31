@@ -67,8 +67,8 @@ It is a reliable UDP protocol using a Sliding Window model (Go-Back-N mechanism)
 * [D3](https://github.com/caozh/Portfolio/tree/master/Web_technologies/D3)
 	* [Brain Network Visulization](https://github.com/caozh/Portfolio/tree/master/Web_technologies/D3/Brain_Network_visulization) <br />
 	<a href="http://cs.iupui.edu/~caozh/CSCI_55200/Project/Three_AD.html"><img src="Web_technologies/D3/Brain_Network_visulization/images/a.png" height="180"></img></a> 
-	* [NFL2015 Visulization](https://github.com/caozh/Portfolio/tree/master/Web_technologies/D3/NFL2015_visulization)
-		* [Demo](http://cs.iupui.edu/~caozh/CSCI_55200/Assignment3/assignment_3.html)
+	* [NFL2015 Visulization](https://github.com/caozh/Portfolio/tree/master/Web_technologies/D3/NFL2015_visulization) <br />
+		<a href="http://cs.iupui.edu/~caozh/CSCI_55200/Assignment3/assignment_3.html"><img src="Web_technologies/D3/NFL2015_visulization/images/a.png" height="180"></img></a> 
 * [Javascript](https://github.com/caozh/Portfolio/tree/master/Web_technologies/Javascript)
 	* [Zombie Siege](https://github.com/caozh/Portfolio/tree/master/Web_technologies/Javascript/Zombie_Siege)
 		* [Demo](http://cs.iupui.edu/~caozh/CSCI_43700/Project_2/index.html)
