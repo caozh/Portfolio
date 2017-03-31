@@ -51,7 +51,8 @@ IFES offers enjoyable entertainment during the airline flight. There are many re
 It is a **BCNF database system** under **Microsoft SQL Server (SSMS)**. 
 SQL functions are predefined to **serve multiple use-cases** of the Entertainment System. 
 * [Apartment DB System](https://github.com/caozh/Portfolio/tree/master/Database/Apartment_DB_System) <br />
-<a href="https://github.com/caozh/Portfolio/tree/master/Database/Apartment_DB_System"><img src="Database/Apartment_DB_System/Design.jpg" height="180"></img></a>
+<a href="https://github.com/caozh/Portfolio/tree/master/Database/Apartment_DB_System"><img src="Database/Apartment_DB_System/Design.jpg" height="180"></img></a> 
+A database system for a apartment management. It is designed in 3NF manner and working with a java front-end.
 ## Python
 * [Defense Homeland](https://github.com/caozh/Portfolio/tree/master/Python/Defense_Homeland)
 	* [Documentation](https://github.com/caozh/Portfolio/blob/master/Python/Defense_Homeland/Documentation.pdf)
