@@ -61,7 +61,7 @@ A funny ACT combat game against an AI Croco-monster. It is written in python wit
 	* [Documentation](https://github.com/caozh/Portfolio/blob/master/Python/Defense_Homeland/Documentation.pdf)
 * [Transport Layer Protocol](https://github.com/caozh/Portfolio/tree/master/Python/Transport_Layer_Protocol) <br />
 <a href="https://github.com/caozh/Portfolio/tree/master/Python/Transport_Layer_Protocol"><img src="Python\Transport_Layer_Protocol\images\a.png" height="180"></img></a> 
-It is a reliable UDP protocol using a Sliding Window model (Go-Back-N mechanism) to transit packets reliably.
+It is a reliable UDP protocol using a **Sliding Window model** (**Go-Back-N** mechanism) to transit packets reliably.
 
 # C
 * [Compiler](https://github.com/caozh/Portfolio/tree/master/C/Compiler)
