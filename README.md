@@ -25,7 +25,8 @@ Implementing some **Image Point Transformations** and **Spatial Filtering Operat
 ## C++
 * [Augmented Reality](https://github.com/caozh/Portfolio/tree/master/Cpp/Augmented_Reality) <br />
 <a href="https://youtu.be/nkjL9Scrxo8" target="_blank"><img src="Cpp/Augmented_Reality/images/a.png" height="180"></img></a> 
-Displaying the combining view of **computer-generated input** (xyz axis bars) overlaying the **reality view from camera**.
+Displaying the combining view of **computer-generated input** (xyz axis bars) overlaying the **reality view from camera**. 
+It is done by recognizing predefined markers and tracking them in real-time, attaching xyz axis bars to show the directions. (More complex 3D model can be displayed by using OpenGL lib)
 	* [Presentation](https://github.com/caozh/Portfolio/blob/master/Cpp/Augmented_Reality/Presentation_Augmented_Reality.pdf)
 * [Edge Detection](https://github.com/caozh/Portfolio/tree/master/Cpp/Edge_detection) <br />
 <a href="http://cs.iupui.edu/~caozh/CSCI_43500/edge_detection/edge_dection.html"><img src="Cpp/Edge_detection/images/a.png" height="180"></img></a>
@@ -55,6 +56,8 @@ SQL functions are predefined to **serve multiple use-cases** of the Entertainmen
 A database system for apartment management. It is designed in 3NF manner and working with a java front-end.
 ## Python
 * [Defense Homeland](https://github.com/caozh/Portfolio/tree/master/Python/Defense_Homeland)
+<a href="https://youtu.be/3QDIKhWIZGg" target="_blank"><img src="Python/Defense_Homeland/images/a.png" height="180"></img></a> 
+
 	* [Documentation](https://github.com/caozh/Portfolio/blob/master/Python/Defense_Homeland/Documentation.pdf)
 * [Transport Layer Protocol](https://github.com/caozh/Portfolio/tree/master/Python/Transport_Layer_Protocol) <br />
 <a href="https://github.com/caozh/Portfolio/tree/master/Python/Transport_Layer_Protocol"><img src="Python\Transport_Layer_Protocol\images\a.png" height="180"></img></a> 
