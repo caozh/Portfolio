@@ -4,7 +4,7 @@ I'm available for hire as a software engineer. I can be reached out at cao104@pu
  
 ## Java
 * <img src="Java/Edge_and_line_detection/images/a.png"></img>[Edge and Line Detection](https://github.com/caozh/Portfolio/tree/master/Java/Edge_and_line_detection)
-
+Applying two mechanisms (Canny Edge Detector & Hough Transform) to detecting low level image features (edges) and detect larger structures formed by these low level features (lines). 
 	* [Report](https://github.com/caozh/Portfolio/blob/master/Java/Edge_and_line_detection/Report.pdf)
 * [Image Manipulation](https://github.com/caozh/Portfolio/tree/master/Java/Image_manipulation)
 	* [Report](https://github.com/caozh/Portfolio/blob/master/Java/Image_manipulation/Report.pdf)
