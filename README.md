@@ -7,7 +7,12 @@ I'm available for hire as a software engineer. I can be reached out at cao104@pu
 <a href="https://github.com/caozh/Portfolio/tree/master/Java/Edge_and_line_detection"><img src="Java/Edge_and_line_detection/images/a.png" height="180" ></img></a> Applying two mechanisms (Canny Edge Detector & Hough Transform) to detect low level image features (edges) and detect larger structures formed by these low level features (lines).
 	* [Report](https://github.com/caozh/Portfolio/blob/master/Java/Edge_and_line_detection/Report.pdf)
 * [Image Manipulation](https://github.com/caozh/Portfolio/tree/master/Java/Image_manipulation) <br />
-<a href="https://github.com/caozh/Portfolio/tree/master/Java/Image_manipulation"><img src="Java/Image_manipulation/images/a.png" height="180"></img></a>
+<a href="https://github.com/caozh/Portfolio/tree/master/Java/Image_manipulation"><img src="Java/Image_manipulation/images/a.png" height="180"></img></a> Implementing some image point transformation and spatial filtering operations:
+1. Histogram Equialization
+2. Logarithm mapping
+3. Rotation
+4. Gaussian filtering
+5. Median filtering
 	* [Report](https://github.com/caozh/Portfolio/blob/master/Java/Image_manipulation/Report.pdf)
 * [Online Marketplace](https://github.com/caozh/Portfolio/tree/master/Java/Online_Marketplace)
 	* [Design](https://github.com/caozh/Portfolio/blob/master/Java/Online_Marketplace/Diagrams/Authorization_pattern_UML.PNG)
