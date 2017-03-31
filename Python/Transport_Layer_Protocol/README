@@ -43,6 +43,11 @@ Example command:
 on %1 show log (This will show the log file of receiver(sender) )
 on %2 show log (This will show the log file of sender(client) )
 
+**Algotithm**
+
+<img src="images\b.png" >
+<img src="images\c.png" >
+
 
 
 
