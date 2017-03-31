@@ -4,13 +4,13 @@ I'm available for hire as a software engineer. I can be reached out at cao104@pu
  
 ## Java
 * [Edge and Line Detection](https://github.com/caozh/Portfolio/tree/master/Java/Edge_and_line_detection) <br />
-<a href="https://github.com/caozh/Portfolio/tree/master/Java/Edge_and_line_detection"><img src="Java/Edge_and_line_detection/images/a.png" height="180" ></img></a> Applying two mechanisms (Canny Edge Detector & Hough Transform) to detect low level image features (edges) and detect larger structures formed by these low level features (lines).
+<a href="https://github.com/caozh/Portfolio/tree/master/Java/Edge_and_line_detection"><img src="Java/Edge_and_line_detection/images/a.png" height="180" ></img></a> Applying two mechanisms (**Canny Edge Detector** & **Hough Transform**) to detect low level image features (edges) and detect larger structures formed by these low level features (lines).
 	* [Report](https://github.com/caozh/Portfolio/blob/master/Java/Edge_and_line_detection/Report.pdf)
 * [Image Manipulation](https://github.com/caozh/Portfolio/tree/master/Java/Image_manipulation) <br />
-<a href="https://github.com/caozh/Portfolio/tree/master/Java/Image_manipulation"><img src="Java/Image_manipulation/images/a.png" height="180"></img></a> Implementing some image point transformation and spatial filtering operations: (Histogram Equialization, Logarithm mapping, Rotation, Gaussian filtering, and Median filtering)
+<a href="https://github.com/caozh/Portfolio/tree/master/Java/Image_manipulation"><img src="Java/Image_manipulation/images/a.png" height="180"></img></a> Implementing some **Image Point Transformation** and **Spatial Filtering Operations**: (Histogram Equialization, Logarithm mapping, Rotation, Gaussian filtering, and Median filtering)
 	* [Report](https://github.com/caozh/Portfolio/blob/master/Java/Image_manipulation/Report.pdf)
 * [Online Marketplace](https://github.com/caozh/Portfolio/tree/master/Java/Online_Marketplace) <br />
-To study good **object-orient software design** and implementation practices centered on **software design patterns** and frameworks for **distributed computing**.	
+To study good **Object-Orient Software Design** and implementation practices centered on **Software Design Patterns** and frameworks for **Distributed Computing**.	
 	* [Design](https://github.com/caozh/Portfolio/blob/master/Java/Online_Marketplace/Diagrams/Authorization_pattern_UML.PNG)
 * [UI and DB Design](https://github.com/caozh/Portfolio/tree/master/Java/UI_and_DB_design)
 	* [Presentation](https://github.com/caozh/Portfolio/blob/master/Java/UI_and_DB_design/Demo.pdf)
