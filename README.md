@@ -46,6 +46,7 @@ The system performs respective functionalities for **Administrator, Seller, and 
 
 ## Database
 * [In-Flight Entertainment System](https://github.com/caozh/Portfolio/tree/master/Database/In-Flight_Entertainment_System) <br />
+<a href="https://github.com/caozh/Portfolio/tree/master/Database/In-Flight_Entertainment_System"><img src="Database/In-Flight_Entertainment_System/images/a.png" height="180"></img></a> 
 IFES offers enjoyable entertainment during the airline flight. There are many records are needed to be stored and operated in order to keep the system running. 
 It is a **BCNF database system** under **Microsoft SQL Server (SSMS)**. 
 SQL functions are predefined to **serve multiple use-cases** of the Entertainment System. 
