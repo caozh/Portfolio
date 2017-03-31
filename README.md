@@ -65,7 +65,8 @@ It is a reliable UDP protocol using a Sliding Window model (Go-Back-N mechanism)
 
 ## Web Technologies
 * [D3](https://github.com/caozh/Portfolio/tree/master/Web_technologies/D3)
-	* [Brain Network Visulization](https://github.com/caozh/Portfolio/tree/master/Web_technologies/D3/Brain_Network_visulization)
+	* [Brain Network Visulization](https://github.com/caozh/Portfolio/tree/master/Web_technologies/D3/Brain_Network_visulization) <br />
+	<img src="Python\Transport_Layer_Protocol\images\a.png" height="180"></img></a> 
 		* [Demo](http://cs.iupui.edu/~caozh/CSCI_55200/Project/Three_AD.html)
 	* [NFL2015 Visulization](https://github.com/caozh/Portfolio/tree/master/Web_technologies/D3/NFL2015_visulization)
 		* [Demo](http://cs.iupui.edu/~caozh/CSCI_55200/Assignment3/assignment_3.html)
