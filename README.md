@@ -48,9 +48,9 @@ The system performs respective functionalities for **Administrator, Seller, and 
 * [In-Flight Entertainment System](https://github.com/caozh/Portfolio/tree/master/Database/In-Flight_Entertainment_System) <br />
 IFES offers enjoyable entertainment during the airline flight. There are many records are needed to be stored and operated in order to keep the system running. 
 It is a **BCNF database system** under **Microsoft SQL Server (SSMS)**. 
-SQL functions are predefined to **serve multiple use-cases** of the Entertainment System 
-* [Apartment DB System](https://github.com/caozh/Portfolio/tree/master/Database/Apartment_DB_System)
-
+SQL functions are predefined to **serve multiple use-cases** of the Entertainment System. 
+* [Apartment DB System](https://github.com/caozh/Portfolio/tree/master/Database/Apartment_DB_System) <br />
+<a href="https://github.com/caozh/Portfolio/tree/master/Database/Apartment_DB_System"><img src="Database/Apartment_DB_System/Design.jpg" height="180"></img></a>
 ## Python
 * [Defense Homeland](https://github.com/caozh/Portfolio/tree/master/Python/Defense_Homeland)
 	* [Documentation](https://github.com/caozh/Portfolio/blob/master/Python/Defense_Homeland/Documentation.pdf)
