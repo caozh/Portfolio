@@ -8,7 +8,8 @@ I'm available for hire as a software engineer. I can be reached out at cao104@pu
 	* [Report](https://github.com/caozh/Portfolio/blob/master/Java/Edge_and_line_detection/Report.pdf)
 * [Image Manipulation](https://github.com/caozh/Portfolio/tree/master/Java/Image_manipulation) <br />
 <a href="https://github.com/caozh/Portfolio/tree/master/Java/Image_manipulation"><img src="Java/Image_manipulation/images/a.png" height="180"></img></a> Implementing some image point transformation and spatial filtering operations: (Histogram Equialization, Logarithm mapping, Rotation, Gaussian filtering, and Median filtering)
-	* [Report](https://github.com/caozh/Portfolio/blob/master/Java/Image_manipulation/Report.pdf)
+	* [Report](https://github.com/caozh/Portfolio/blob/master/Java/Image_manipulation/Report.pdf) <br />
+To study good object-orient software design and implementation practices centered on software design patterns and frameworks for distributed computing.	
 * [Online Marketplace](https://github.com/caozh/Portfolio/tree/master/Java/Online_Marketplace)
 	* [Design](https://github.com/caozh/Portfolio/blob/master/Java/Online_Marketplace/Diagrams/Authorization_pattern_UML.PNG)
 * [UI and DB Design](https://github.com/caozh/Portfolio/tree/master/Java/UI_and_DB_design)
