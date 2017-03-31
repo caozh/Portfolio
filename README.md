@@ -52,11 +52,13 @@ It is a **BCNF database system** under **Microsoft SQL Server (SSMS)**.
 SQL functions are predefined to **serve multiple use-cases** of the Entertainment System. 
 * [Apartment DB System](https://github.com/caozh/Portfolio/tree/master/Database/Apartment_DB_System) <br />
 <a href="https://github.com/caozh/Portfolio/tree/master/Database/Apartment_DB_System"><img src="Database/Apartment_DB_System/Design.jpg" height="180"></img></a> 
-A database system for a apartment management. It is designed in 3NF manner and working with a java front-end.
+A database system for apartment management. It is designed in 3NF manner and working with a java front-end.
 ## Python
 * [Defense Homeland](https://github.com/caozh/Portfolio/tree/master/Python/Defense_Homeland)
 	* [Documentation](https://github.com/caozh/Portfolio/blob/master/Python/Defense_Homeland/Documentation.pdf)
-* [Transport Layer Protocol](https://github.com/caozh/Portfolio/tree/master/Python/Transport_Layer_Protocol)
+* [Transport Layer Protocol](https://github.com/caozh/Portfolio/tree/master/Python/Transport_Layer_Protocol) <br />
+<a href="https://github.com/caozh/Portfolio/tree/master/Python/Transport_Layer_Protocol"><img src="Python\Transport_Layer_Protocol\images" height="180"></img></a> 
+It is a reliable UDP protocol using a Sliding Window model (Go-Back-N mechanism) to transit packets reliably.
 
 # C
 * [Compiler](https://github.com/caozh/Portfolio/tree/master/C/Compiler)
