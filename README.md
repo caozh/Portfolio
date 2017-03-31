@@ -55,7 +55,7 @@ SQL functions are predefined to **serve multiple use-cases** of the Entertainmen
 <a href="https://github.com/caozh/Portfolio/tree/master/Database/Apartment_DB_System"><img src="Database/Apartment_DB_System/Design.jpg" height="180"></img></a> 
 A database system for apartment management. It is designed in 3NF manner and working with a java front-end.
 ## Python
-* [Defense Homeland](https://github.com/caozh/Portfolio/tree/master/Python/Defense_Homeland)
+* [Defense Homeland](https://github.com/caozh/Portfolio/tree/master/Python/Defense_Homeland) <br />
 <a href="https://youtu.be/3QDIKhWIZGg" target="_blank"><img src="Python/Defense_Homeland/images/a.png" height="180"></img></a> 
 	* [Documentation](https://github.com/caozh/Portfolio/blob/master/Python/Defense_Homeland/Documentation.pdf)
 * [Transport Layer Protocol](https://github.com/caozh/Portfolio/tree/master/Python/Transport_Layer_Protocol) <br />
