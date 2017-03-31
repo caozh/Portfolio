@@ -4,7 +4,7 @@ I'm available for hire as a software engineer. I can be reached out at cao104@pu
  
 ## Java
 * [Edge and Line Detection](https://github.com/caozh/Portfolio/tree/master/Java/Edge_and_line_detection)
-<img src="Java/Edge_and_line_detection/images/1.png"></img>
+<img src="Java/Edge_and_line_detection/images/a.png"></img>
 	* [Report](https://github.com/caozh/Portfolio/blob/master/Java/Edge_and_line_detection/Report.pdf)
 * [Image Manipulation](https://github.com/caozh/Portfolio/tree/master/Java/Image_manipulation)
 	* [Report](https://github.com/caozh/Portfolio/blob/master/Java/Image_manipulation/Report.pdf)
