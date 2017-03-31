@@ -29,16 +29,25 @@ README
 <Instructions>
 To use this program:
     First, run slidingReceiver.repy on a node. You must specify a port that will be used  for this server to receive and send packet.
-    Example format: on %1 run slidingReceiver.repy (Port number)
+
+	Example format: on %1 run slidingReceiver.repy (Port number)
+
     Make sure you write down the ip address of this node because you are going to need it for slidingSender.repy
+
     Next, you need to upload a data file to a client node for later use, here we use UDPFile.file as the default file.Type in command: on %2 upload UDPFile.file
-    Next, run slidingSender.repy on the node that has the UDPFile.file 
+ 
+	Next, run slidingSender.repy on the node that has the UDPFile.file 
+
 	You must enter the ip address of server and specify a port for this node to receive and send packets.
+
     Example command: on %2 run slidingSender.repy (server IP) (Port number)
 
 Type in command show log to see the log file of the SlidingWindow activation.
+
 Example command:
+
 on %1 show log (This will show the log file of receiver(sender) )
+
 on %2 show log (This will show the log file of sender(client) )
 
 **Algotithm**
