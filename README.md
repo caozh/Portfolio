@@ -9,11 +9,11 @@ I'm available for hire as a software engineer. I can be reached out at cao104@pu
 * [Image Manipulation](https://github.com/caozh/Portfolio/tree/master/Java/Image_manipulation) <br />
 <a href="https://github.com/caozh/Portfolio/tree/master/Java/Image_manipulation"><img src="Java/Image_manipulation/images/a.png" height="180"></img></a> Implementing some **Image Point Transformations** and **Spatial Filtering Operations**: (Histogram Equialization, Logarithm mapping, Rotation, Gaussian filtering, and Median filtering)
 	* [Report](https://github.com/caozh/Portfolio/blob/master/Java/Image_manipulation/Report.pdf)
-* [Online Marketplace](https://github.com/caozh/Portfolio/tree/master/Java/Online_Marketplace) <br />
-To study good **Object-Orient Software Design** and implementation practices centered on **Software Design Patterns** and frameworks for **Distributed Computing**.	
+* [Online Marketplace (Ongoing)](https://github.com/caozh/Portfolio/tree/master/Java/Online_Marketplace) <br />
+An online B2C shopping platform, applying **Object-Orient Software Design** and **Software Design Patterns** and frameworks for **Distributed Computing**.	
 	* [Design](https://github.com/caozh/Portfolio/blob/master/Java/Online_Marketplace/Diagrams/Authorization_pattern_UML.PNG)
 * [UI and DB Design](https://github.com/caozh/Portfolio/tree/master/Java/UI_and_DB_design) <br />
-<a href="https://github.com/caozh/Portfolio/tree/master/Java/UI_and_DB_design"><img src="Java/UI_and_DB_design/images/a.png" height="180"></img></a> 
+<a href="https://github.com/caozh/Portfolio/tree/master/Java/UI_and_DB_design"><img src="Java/UI_and_DB_design/images/a.png" height="180"></img></a> A front-end for a code disseminator (PhD. students’ research project) in a wireless sensor network, Allowed the sensors information and statuses be maintained efficiently by cooperating the user-friendly front-end and dedicated database.
 	* [Presentation](https://github.com/caozh/Portfolio/blob/master/Java/UI_and_DB_design/Demo.pdf)
 * [Cryptography Studies](https://github.com/caozh/Portfolio/tree/master/Java/Cryptography_studies)
 
