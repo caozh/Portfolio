@@ -7,7 +7,7 @@ I'm available for hire as a software engineer. I can be reached out at cao104@pu
 An online B2C shopping platform, applying **Object-Orient Software Design** and **Software Design Patterns** and frameworks for **Distributed Computing**.	
 	* [Design](https://github.com/caozh/Portfolio/blob/master/Java/Online_Marketplace/Diagrams/Authorization_pattern_UML.PNG)
 * [Wireless Sensor Network Code Disseminator](https://github.com/caozh/Portfolio/tree/master/Java/UI_and_DB_design) <br />
-<a href="https://github.com/caozh/Portfolio/tree/master/Java/UI_and_DB_design"><img src="Java/UI_and_DB_design/images/a.png" height="180"></img></a> A front-end for a code disseminator (PhD. students’ research project) working in a wireless sensor network. It allows the sensors information and statuses be maintained efficiently by cooperating the user-friendly front-end and dedicated database.
+<a href="https://github.com/caozh/Portfolio/tree/master/Java/UI_and_DB_design"><img src="Java/UI_and_DB_design/images/a.png" height="180"></img></a> A front-end for a code disseminator (PhD. students’ research project) working in a wireless sensor network. It allows the sensors information and statuses be maintained efficiently by cooperating the **user-friendly front-end** and **dedicated database**.
 	* [Presentation](https://github.com/caozh/Portfolio/blob/master/Java/UI_and_DB_design/Demo.pdf)
 * [Edge and Line Detection](https://github.com/caozh/Portfolio/tree/master/Java/Edge_and_line_detection) <br />
 <a href="https://github.com/caozh/Portfolio/tree/master/Java/Edge_and_line_detection"><img src="Java/Edge_and_line_detection/images/a.png" height="180" ></img></a> Applying two mechanisms (**Canny Edge Detector** & **Hough Transform**) to detect low level image features (edges) and detect larger structures formed by these low level features (lines).
@@ -18,7 +18,8 @@ An online B2C shopping platform, applying **Object-Orient Software Design** and 
 * [Cryptography Studies](https://github.com/caozh/Portfolio/tree/master/Java/Cryptography_studies)
 
 ## C++
-* [Augmented Reality](https://github.com/caozh/Portfolio/tree/master/Cpp/Augmented_Reality)
+* [Augmented Reality](https://github.com/caozh/Portfolio/tree/master/Cpp/Augmented_Reality) <br />
+<a href="https://youtu.be/nkjL9Scrxo8" target="_blank"><img src="Cpp/Augmented_Reality/images/a.png" height="180"></img></a>
 	* [Presentation](https://github.com/caozh/Portfolio/blob/master/Cpp/Augmented_Reality/Presentation_Augmented_Reality.pdf)
 * [Edge Detection](https://github.com/caozh/Portfolio/tree/master/Cpp/Edge_detection)
 	* [Report](http://cs.iupui.edu/~caozh/CSCI_43500/edge_detection/edge_dection.html)
