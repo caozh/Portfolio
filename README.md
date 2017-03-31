@@ -20,9 +20,9 @@ An online B2C shopping platform, applying **Object-Orient Software Design** and 
 ## C++
 * [Augmented Reality](https://github.com/caozh/Portfolio/tree/master/Cpp/Augmented_Reality) <br />
 <a href="https://youtu.be/nkjL9Scrxo8" target="_blank"><img src="Cpp/Augmented_Reality/images/a.png" height="180"></img></a> Displaying the combining view of **computer-generated input** (xyz axis bars) overlaying the **reality view from camera**.
-
 	* [Presentation](https://github.com/caozh/Portfolio/blob/master/Cpp/Augmented_Reality/Presentation_Augmented_Reality.pdf)
-* [Edge Detection](https://github.com/caozh/Portfolio/tree/master/Cpp/Edge_detection)
+* [Edge Detection](https://github.com/caozh/Portfolio/tree/master/Cpp/Edge_detection) <br />
+<a href="http://cs.iupui.edu/~caozh/CSCI_43500/edge_detection/edge_dection.html"><img src="Cpp/Edge_detection/images/a.png" height="180"></img></a>
 	* [Report](http://cs.iupui.edu/~caozh/CSCI_43500/edge_detection/edge_dection.html)
 * [Image Filtering](https://github.com/caozh/Portfolio/tree/master/Cpp/Image_filtering)
 	* [Report](http://cs.iupui.edu/~caozh/CSCI_43500/filter/filter.html)
