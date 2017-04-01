@@ -30,7 +30,7 @@ It is done by **recognizing predefined markers** and **tracking them in real-tim
 	* [Presentation](https://github.com/caozh/Portfolio/blob/master/Cpp/Augmented_Reality/Presentation_Augmented_Reality.pdf)
 * [Edge Detection](https://github.com/caozh/Portfolio/tree/master/Cpp/Edge_detection) <br />
 <a href="http://cs.iupui.edu/~caozh/CSCI_43500/edge_detection/edge_dection.html"><img src="Cpp/Edge_detection/images/a.png" height="180"></img></a> 
-This project loads an raw image into 2D array, applys differentiation filters on X and Y directions to retrieve image primitive edges, at last, combines them to get the recognizable edges.
+This project loads a raw image into 2D array, applys differentiation filters on X and Y directions to retrieve image primitive edges, at last, combines them to get the recognizable edges.
 * [Image Filtering](https://github.com/caozh/Portfolio/tree/master/Cpp/Image_filtering) <br />
 <a href="http://cs.iupui.edu/~caozh/CSCI_43500/filter/filter.html"><img src="Cpp/Image_filtering/images/a.png" height="180"></img></a> 
 This project is designed to apply Average/Motion/Gaussian filters on an input raw image.
@@ -89,8 +89,10 @@ The compiler contains five phases: **Lexical analysis, syntax analysis, semantic
 	A top-view zombie killing game written in Javascript. 
 	Zombies are spawned from the borders, and move toward player charactor. Player uses left-click to shoot zombies. 
 	Surviving-time and High-score are stored in localStorage.
-	* [Five In A Row](https://github.com/caozh/Portfolio/tree/master/Web_technologies/Javascript/Five_in_a_row) <br />
+	* [Gomoku (Five In A Row)](https://github.com/caozh/Portfolio/tree/master/Web_technologies/Javascript/Five_in_a_row) <br />
 	<a href="https://github.com/caozh/Portfolio/tree/master/Web_technologies/Javascript/Five_in_a_row"><img src="Web_technologies/Javascript/Five_in_a_row/images/a.png" height="180"></img></a> 
+	The game is developed as a client and server architecture web application (written in Javascript/HTML), so that one player can play against another player remotely. 
+	Real-time network connection is achieved by applying **Socket.IO** and **Node.js**
 * [HTML5](https://github.com/caozh/Portfolio/tree/master/Web_technologies/HTML5)
 * [ActionScript](https://github.com/caozh/Portfolio/tree/master/Web_technologies/ActionScript)
 
