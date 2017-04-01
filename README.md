@@ -30,9 +30,10 @@ It is done by **recognizing predefined markers** and **tracking them in real-tim
 	* [Presentation](https://github.com/caozh/Portfolio/blob/master/Cpp/Augmented_Reality/Presentation_Augmented_Reality.pdf)
 * [Edge Detection](https://github.com/caozh/Portfolio/tree/master/Cpp/Edge_detection) <br />
 <a href="http://cs.iupui.edu/~caozh/CSCI_43500/edge_detection/edge_dection.html"><img src="Cpp/Edge_detection/images/a.png" height="180"></img></a> 
-This project loads image into 2D array, applys differentiation filters on X and Y directions to retrieve image primitive edges, at last combines them to get the recognizable edges.
+This project loads an raw image into 2D array, applys differentiation filters on X and Y directions to retrieve image primitive edges, at last, combines them to get the recognizable edges.
 * [Image Filtering](https://github.com/caozh/Portfolio/tree/master/Cpp/Image_filtering) <br />
-<a href="http://cs.iupui.edu/~caozh/CSCI_43500/filter/filter.html"><img src="Cpp/Image_filtering/images/a.png" height="180"></img></a>
+<a href="http://cs.iupui.edu/~caozh/CSCI_43500/filter/filter.html"><img src="Cpp/Image_filtering/images/a.png" height="180"></img></a> 
+This project is designed to apply Average/Motion/Gaussian filters on an input raw image.
 * [Algorithm Studies](https://github.com/caozh/Portfolio/tree/master/Cpp/Algorithm_studies)
 	* [Algorithms Running Time Analysis](https://github.com/caozh/Portfolio/tree/master/Cpp/Algorithm_studies/Algorithms_running_time_analysis)
 	* [ColumnSort vs QuickSort](https://github.com/caozh/Portfolio/tree/master/Cpp/Algorithm_studies/ColumnSort_VS_QuickSort)
