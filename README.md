@@ -91,7 +91,7 @@ The compiler contains five phases: **Lexical analysis, syntax analysis, semantic
 	Surviving-time and High-score are stored in localStorage.
 	* [Gomoku (Five In A Row)](https://github.com/caozh/Portfolio/tree/master/Web_technologies/Javascript/Five_in_a_row) <br />
 	<a href="https://github.com/caozh/Portfolio/tree/master/Web_technologies/Javascript/Five_in_a_row"><img src="Web_technologies/Javascript/Five_in_a_row/images/a.png" height="180"></img></a> 
-	The game is developed as a client and server architecture web application (written in Javascript/HTML), so that one player can play against another player remotely. 
+	The game is developed as a **client-server architecture** web application (written in Javascript/HTML), so that one player can play against another player remotely. 
 	Real-time network connection is achieved by applying **Socket.IO** and **Node.js**
 * [HTML5](https://github.com/caozh/Portfolio/tree/master/Web_technologies/HTML5)
 * [ActionScript](https://github.com/caozh/Portfolio/tree/master/Web_technologies/ActionScript)
