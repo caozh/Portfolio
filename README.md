@@ -90,7 +90,7 @@ The compiler contains five phases: **Lexical analysis, syntax analysis, semantic
 	Zombies are spawned from the borders, and move toward player charactor. Player uses left-click to shoot zombies. 
 	Surviving-time and High-score are stored in localStorage.
 	* [Gomoku (Five In A Row)](https://github.com/caozh/Portfolio/tree/master/Web_technologies/Javascript/Five_in_a_row) <br />
-	<a href="https://github.com/caozh/Portfolio/tree/master/Web_technologies/Javascript/Five_in_a_row"><img src="Web_technologies/Javascript/Five_in_a_row/images/a.png" height="180"></img></a> 
+	<a href="https://github.com/caozh/Portfolio/tree/master/Web_technologies/Javascript/Five_in_a_row"><img src="Web_technologies/Javascript/Five_in_a_row/images/a.png" height="180"></img></a><br /> 
 	The game is developed as a **client-server architecture** web application (written in Javascript/HTML), so that one player can play against another remotely. 
 	In addition, a chat panel is created to offer a real-time SMS service.
 	The real-time bi-directional network connection is achieved by applying **Socket.IO** and **Node.js**
