@@ -85,7 +85,7 @@ The compiler contains five phases: **Lexical analysis, syntax analysis, semantic
 	* [Zombie Siege](https://github.com/caozh/Portfolio/tree/master/Web_technologies/Javascript/Zombie_Siege) <br />
 	<a href="http://cs.iupui.edu/~caozh/CSCI_43700/Project_2/index.html"><img src="Web_technologies/Javascript/Zombie_Siege/images/a.png" height="180"></img></a> 
 	A top-view zombie killing game written in Javascript. 
-	Zombies spawn from the border, and move toward player charactor. Player uses left-click to shoot bullets. 
+	Zombies are spawned from the borders, and move toward player charactor. Player uses left-click to shoot zombies. 
 	Surviving-time and High-score are stored in localStorage.
 	* [Five In A Row](https://github.com/caozh/Portfolio/tree/master/Web_technologies/Javascript/Five_in_a_row) <br />
 	<a href="https://github.com/caozh/Portfolio/tree/master/Web_technologies/Javascript/Five_in_a_row"><img src="Web_technologies/Javascript/Five_in_a_row/images/a.png" height="180"></img></a> 
