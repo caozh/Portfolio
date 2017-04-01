@@ -73,8 +73,8 @@ The compiler contains five phases: **Lexical analysis, syntax analysis, semantic
 	* [Brain Network Visulization](https://github.com/caozh/Portfolio/tree/master/Web_technologies/D3/Brain_Network_visulization) <br />
 	<a href="http://cs.iupui.edu/~caozh/CSCI_55200/Project/Three_AD.html"><img src="Web_technologies/D3/Brain_Network_visulization/images/a.png" height="180"></img></a> 
 	The subjective of this project is to provide a type of visualization of brain node connectivity between multiple subjects. 
-	Force-Directed Graph is used to manifest the impact of connectivity of each node which leads the final layout of the graph. 
-	The standard deviation (SD) of each node among subjects is calculated and the value is represented by the level of purple ([light,dark] -> [weak,strong]).
+	**Force-Directed Graph** is used to manifest the impact of connectivity of each node which leads the final layout of the graph. 
+	The **standard deviation** (SD) of each node among subjects is calculated and the value is represented by the level of purple ([light,dark] -> [weak,strong]).
 	Pointing the cursor to a target node, the connectivity information will be shown. 
 	* [NFL2015 Visulization](https://github.com/caozh/Portfolio/tree/master/Web_technologies/D3/NFL2015_visulization) <br />
 		<a href="http://cs.iupui.edu/~caozh/CSCI_55200/Assignment3/assignment_3.html"><img src="Web_technologies/D3/NFL2015_visulization/images/a.png" height="180"></img></a> 
