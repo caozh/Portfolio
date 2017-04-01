@@ -85,7 +85,7 @@ The compiler contains five phases: **Lexical analysis, syntax analysis, semantic
 	By pointing the cursor to a link between team nodes, match scores between them and the week number will be shown.	
 * [Javascript](https://github.com/caozh/Portfolio/tree/master/Web_technologies/Javascript)
 	* [Zombie Siege](https://github.com/caozh/Portfolio/tree/master/Web_technologies/Javascript/Zombie_Siege) <br />
-	<a href="http://cs.iupui.edu/~caozh/CSCI_43700/Project_2/index.html"><img src="Web_technologies/Javascript/Zombie_Siege/images/a.png" height="180"></img></a> 
+	<a href="http://cs.iupui.edu/~caozh/CSCI_43700/Project_2/index.html"><img src="Web_technologies/Javascript/Zombie_Siege/images/a.png" height="180"></img></a><br />
 	A top-view zombie killing game written in Javascript. 
 	Zombies are spawned from the borders, and move toward player charactor. Player uses left-click to shoot zombies. 
 	Surviving-time and High-score are stored in localStorage.
