@@ -4,5 +4,3 @@ Title:       Huffman encoding
 Description: A simple program to perform Huffman encoding. 
 Input:       A text file with each line giving the character and frequency of each character -> "a 8"
 Output:      A text file with each line giving the character and the Huffman code            -> "a 1001"
-
-Copyright 2016 Indiana University Purdue University Indianapolis. All rights reserved.

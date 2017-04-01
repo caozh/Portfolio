@@ -1,5 +1,5 @@
 Subject:
-To implement some image point transformation and spatial filtering operations
+To implement some image point transformations and spatial filtering operations
 1. Histogram Equialization
 2. Logarithm mapping
 3. Rotation

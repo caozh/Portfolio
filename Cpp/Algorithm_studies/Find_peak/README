@@ -3,5 +3,3 @@ Last modify: 10/3/2016
 Title:       finding peak 
 Description: Input "peak.txt" file which containing array of numbers separated by LF.
 			 Find the peak value within the input number array.
-
-Copyright 2016 Indiana University Purdue University Indianapolis. All rights reserved.

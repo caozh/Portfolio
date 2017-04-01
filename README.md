@@ -78,7 +78,7 @@ The compiler contains five phases: **Lexical analysis, syntax analysis, semantic
 	**Force-Directed Graph** is used to manifest the impact of connectivity of each node which leads to the final layout of the graph. 
 	The **standard deviation** (SD) of each node among subjects is calculated and the value is represented by the level of purple [light,dark] -> [weak,strong].
 	By pointing the cursor to a target node, the connectivity information will be shown. 
-	* [NFL2015 Visulization](https://github.com/caozh/Portfolio/tree/master/Web_technologies/D3/NFL2015_visulization) <br />
+	* [NFL 2015 Visulization](https://github.com/caozh/Portfolio/tree/master/Web_technologies/D3/NFL2015_visulization) <br />
 	<a href="http://cs.iupui.edu/~caozh/CSCI_55200/Assignment3/assignment_3.html"><img src="Web_technologies/D3/NFL2015_visulization/images/a.png" height="180"></img></a> 
 	A graph visualization for the 2015 National Football League (NFL) regular season games between all 32 NFL teams.
 	By pointing the cursor to a team, the win-loss record will be shown; 
